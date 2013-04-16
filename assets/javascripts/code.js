@@ -69,26 +69,36 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   };
 
   /**
-   * 提交代码
+   * 更新代码
    */
   Code.prototype.update = function(e) {
     var self = this;
 
     var el = $(e.currentTarget),
-        cb = function() {
+        cb = function(res) {
+          if (res.status) {
+            self._tips(true, res.message);
+          } else {
+            self._tips(false, res.message);
+          }
         };
 
     self._ajax(el, './act/edit.php', self.makeDemoInfo('update'), cb);
   };
 
   /**
-   * 更新代码
+   * 提交代码
    */
   Code.prototype.commit = function(e) {
     var self = this;
 
     var el = $(e.currentTarget),
-        cb = function() {
+        cb = function(res) {
+          if (res.status) {
+            self._tips(true, res.message);
+          } else {
+            self._tips(false, res.message);
+          }
         };
 
     self._ajax(el, './act/add.php', self.makeDemoInfo('commit'), cb);

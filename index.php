@@ -7,6 +7,7 @@
   </head>
   <body>
     <div class="wrap">
+      <div id="J_Tips" class="tips"></div>
       <header class="head">
         <nav class="nav-docs">
           <a href="javascript:;" class="current">种子</a>
