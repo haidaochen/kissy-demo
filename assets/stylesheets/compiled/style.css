@@ -1861,8 +1861,15 @@ body a:hover {
 .cont .btn i {
   margin-right: 5px;
 }
-
 /* line 157, ../src/style.sass */
+.cont .disabled {
+  cursor: default;
+  color: #666666;
+  background: #e6e6e6;
+  background-image: none;
+}
+
+/* line 163, ../src/style.sass */
 .side {
   margin-right: -200px;
   padding-right: 19px;
@@ -1872,7 +1879,7 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
 }
-/* line 163, ../src/style.sass */
+/* line 169, ../src/style.sass */
 .side h2 {
   padding: 5px 0;
   margin-bottom: 15px;
@@ -1884,14 +1891,14 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 173, ../src/style.sass */
+/* line 179, ../src/style.sass */
 .side .method dt, .side .method dd {
   padding: 10px 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 177, ../src/style.sass */
+/* line 183, ../src/style.sass */
 .side .method dt {
   cursor: pointer;
   margin: 10px 0 2px;
@@ -1901,13 +1908,13 @@ body a:hover {
   border-radius: 2px 2px 0 0;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 184, ../src/style.sass */
+/* line 190, ../src/style.sass */
 .side .method dt i {
   display: inline;
   float: right;
   margin-left: 10px;
 }
-/* line 188, ../src/style.sass */
+/* line 194, ../src/style.sass */
 .side .method dd {
   display: none;
   -webkit-border-radius: 0 0 2px 2px;
@@ -1915,34 +1922,34 @@ body a:hover {
   border-radius: 0 0 2px 2px;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 193, ../src/style.sass */
+/* line 199, ../src/style.sass */
 .side .method li {
   height: 23px;
   text-align: right;
   line-height: 23px;
 }
-/* line 198, ../src/style.sass */
+/* line 204, ../src/style.sass */
 .side .method li .current {
   color: #84bcde;
 }
-/* line 201, ../src/style.sass */
+/* line 207, ../src/style.sass */
 .side .config {
   display: none;
 }
-/* line 204, ../src/style.sass */
+/* line 210, ../src/style.sass */
 .side .config ul {
   margin-bottom: 10px;
   overflow: hidden;
 }
-/* line 208, ../src/style.sass */
+/* line 214, ../src/style.sass */
 .side .config li {
   line-height: 30px;
 }
-/* line 211, ../src/style.sass */
+/* line 217, ../src/style.sass */
 .side .config .author {
   width: 160px;
 }
-/* line 214, ../src/style.sass */
+/* line 220, ../src/style.sass */
 .side .config .intro {
   width: 160px;
   height: 100px;

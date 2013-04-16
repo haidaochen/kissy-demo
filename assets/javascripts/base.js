@@ -4,7 +4,7 @@
  * @version 1.0
  */
 
-KISSY.add('demo/base', function(S, Node) {
+KISSY.add('demo/base', function(S, Node, IO) {
 
   var $ = S.all;
 
@@ -65,6 +65,35 @@ KISSY.add('demo/base', function(S, Node) {
   };
 
   /**
+   * 提交防洪
+   * @param {String}   el
+   * @param {String}   url
+   * @param {Object}   data
+   * @param {Function} cb
+   */
+  Base.prototype._ajax = function(el, url, data, cb) {
+    var self    = this,
+        elId    = el.attr('id'),
+        iconEl  = el.one('i'),
+        iconCls = iconEl.attr('class');
+
+    el.removeAttr('id');
+    el.addClass('disabled');
+    iconEl.removeAttr('class');
+    iconEl.addClass("icon-refresh icon-spin");
+    
+    IO.post(url, data, function(res) {
+
+      cb();
+      
+      el.attr('id', elId);
+      el.removeClass('disabled');
+      iconEl.removeAttr('class');
+      iconEl.addClass(iconCls);
+    });
+  };
+
+  /**
    * 渲染界面
    * @param {String} state
    */
@@ -96,5 +125,5 @@ KISSY.add('demo/base', function(S, Node) {
   return Base;
 
 }, {
-  requires: ['node']
+  requires: ['node', 'ajax']
 });
