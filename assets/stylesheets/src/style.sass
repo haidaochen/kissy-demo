@@ -1,0 +1,213 @@
+@import "compass"
+@import "font-awesome"
+
+// default text
+$COLOR_DEFAULT_TEXT   : #C6C6C6
+// hight text
+$COLOR_HIGHLIGHT      : #FFF
+// default link
+$COLOR_DEFAULT_LINK   : #C6C6C6
+// light link
+$COLOR_LIGHT_LINK     : #84BCDE
+// default border
+$COLOR_DEFAULT_BORDER : #121212
+// light border
+$COLOR_LIGHT_BORDER   : rgba(255, 255, 255, .07)
+// background
+$COLOR_BACKGROUND     : #2F2F2F
+
+@mixin border-shadow($orient)
+  @if $orient == right
+    border-right: 1px solid $COLOR_DEFAULT_BORDER
+    +box-shadow($COLOR_LIGHT_BORDER 1px 0 0)
+  @else if $orient == bottom
+    border-bottom: 1px solid $COLOR_DEFAULT_BORDER
+    +box-shadow($COLOR_LIGHT_BORDER 0 1px 0)
+
++global-reset()
+
+body
+  color: $COLOR_DEFAULT_TEXT
+  background: $COLOR_BACKGROUND
+
+  a
+    color: $COLOR_DEFAULT_LINK
+    text-decoration: none
+    &:hover
+      color: $COLOR_DEFAULT_LINK
+      text-decoration: underline
+
+.head
+  padding: 15px 0
+  margin-bottom: 40px
+  height: 27px
+  line-height: 27px
+  +border-shadow("bottom")
+  border-width: 4px
+  overflow: hidden
+
+  .nav-docs
+    +float-left
+    padding-right: 19px
+    width: 180px
+    +border-shadow("right")
+
+    a
+      padding: 7px 10px
+      +border-radius(4px)
+
+    .current
+      background: #202020
+      +box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset)
+
+  .module
+    +float-left
+    padding-left: 20px
+
+    li
+      +float-left
+      margin-right: 20px
+
+      .current
+        color: $COLOR_LIGHT_LINK
+
+.wrap
+  padding: 0 20px 20px
+  overflow: hidden
+
+.cont, .side
+  +float-right
+  padding-bottom: 9999px
+  margin-bottom: -9999px
+
+.cont
+  width: 100%
+
+  .main
+    margin-left: 220px
+    
+    .main-hd
+      height: 35px
+      margin-bottom: 15px
+      padding-bottom: 5px
+      +border-shadow("bottom")
+
+      h1
+        font-size: 35px
+        color: $COLOR_HIGHLIGHT
+
+      .add, .back
+        +float-right
+        margin-top: 10px
+        font-size: 18px
+        color: $COLOR_LIGHT_LINK
+
+      .btn
+        margin-right: 10px
+
+    .main-bd
+      margin-bottom: 15px
+      overflow: hidden
+
+  .list
+
+    li
+      padding: 10px 15px
+      margin-bottom: 15px
+      background: rgba(0, 0, 0 , .2)
+      +border-radius(4px)
+      +box-shadow(rgba(0, 0, 0, 0.2) 0 0 0 1px inset)
+
+      a
+        font-size: 18px
+        font-weight: 700
+
+  .code
+    display: none
+
+    .column
+      +float-left
+      &:first-child
+        margin-right: 15px
+
+    .window
+      margin-bottom: 15px
+      width: 100%
+      height: 300px
+      line-height: 18px
+      background: #FFF
+
+  .btn
+    cursor: pointer
+    +inline-block
+    padding: 5px 10px
+    color: #333
+    border: 1px solid #333
+    +border-radius(4px)
+    +background-image(linear-gradient(#FFF, #E6E6E6))
+    &:hover
+      text-decoration: none
+
+    i
+      margin-right: 5px
+
+.side
+  margin-right: -200px
+  padding-right: 19px
+  width: 180px
+  +border-shadow("right")
+
+  h2
+    padding: 5px 0
+    margin-bottom: 15px
+    height: 30px
+    font-size: 26px
+    line-height: 26px
+    +border-shadow("bottom")
+
+  .method
+
+    dt, dd
+      padding: 10px 5px
+      +box-shadow(rgba(0, 0, 0, 0.2) 0 0 0 1px inset)
+
+    dt
+      cursor: pointer
+      margin: 10px 0 2px
+      text-align: right
+      +border-radius(2px 2px 0 0)
+      background: rgba(0, 0, 0 , .2)
+
+      i
+        +float-right
+        margin-left: 10px
+
+    dd
+      display: none
+      +border-radius(0 0 2px 2px)
+      background: rgba(0, 0, 0 , .1)
+
+    li
+      height: 23px
+      text-align: right
+      line-height: 23px
+
+      .current
+        color: $COLOR_LIGHT_LINK
+
+  .config
+    display: none
+
+    ul
+      margin-bottom: 10px
+      overflow: hidden
+
+    li
+      line-height: 30px
+
+    .author
+      width: 160px
+
+    .intro
+      width: 160px
+      height: 100px

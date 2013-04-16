@@ -1,0 +1,1 @@
+KISSY.config({packages:{demo:{base:"../assets/build",tag:+new Date}}}),KISSY.use("demo/module",function(e,a){new a});
