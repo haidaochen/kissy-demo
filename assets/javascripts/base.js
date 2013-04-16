@@ -68,31 +68,40 @@ KISSY.add('demo/base', function(S, Node, IO) {
 
   /**
    * 提交防洪
-   * @param {String}   el
+   * @param {Object}   e
    * @param {String}   url
    * @param {Object}   data
    * @param {Function} cb
    */
-  Base.prototype._ajax = function(el, url, data, cb) {
-    var self    = this,
-        elId    = el.attr('id'),
-        iconEl  = el.one('i'),
-        iconCls = iconEl.attr('class');
+  Base.prototype._ajax = function(e, url, data, cb) {
+    var self     = this,
+        target   = $(e.currentTarget),
+        targetId = target.attr('id'),
+        iconEl   = target.one('i'),
+        iconCls  = iconEl.attr('class');
 
-    el.removeAttr('id');
-    el.addClass('disabled');
+    // 禁用监听
+    target.removeAttr('id');
+    target.addClass('disabled');
 
+    // 更换图标
     iconEl.removeAttr('class');
-    iconEl.addClass("icon-refresh icon-spin");
+    iconEl.addClass("icon-spinner icon-spin");
     
     IO.post(url, data, function(res) {
-      el.attr('id', elId);
-      el.removeClass('disabled');
+      // 恢复监听
+      target.attr('id', targetId);
+      target.removeClass('disabled');
 
+      // 还原图标
       iconEl.removeAttr('class');
       iconEl.addClass(iconCls);
 
-      cb(res);
+      // 提示信息
+      res.status ? self._tips(true, res.message) : self._tips(false, res.message);
+
+      // 招待回调
+      cb && cb(res);
     });
   };
 
@@ -104,13 +113,25 @@ KISSY.add('demo/base', function(S, Node, IO) {
   Base.prototype._tips = function(type, info) {
     var self = this;
 
+    // 清除定时
     TIPS_T && clearTimeout(TIPS_T);
-    type ? TIPS_EL.removeClass('error') : TIPS_EL.addClass('error');
-    TIPS_EL.html(info).slideDown(0.1);
 
+    // 拼装内容
+    if (type) {
+      TIPS_EL.removeClass('error');
+      TIPS_EL.html('<i class="icon-ok"></i>' + info);
+    } else {
+      TIPS_EL.addClass('error');
+      TIPS_EL.html('<i class="icon-remove"></i>' + info);
+    }
+
+    // 展示动画
+    TIPS_EL.slideDown(0.2);
+
+    // 创建定时
     TIPS_T = setTimeout(function() {
-      TIPS_EL.html('').slideUp(0.1);
-    }, 1000);
+      TIPS_EL.html('').slideUp(0.2);
+    }, 2000);
   };
 
   /**

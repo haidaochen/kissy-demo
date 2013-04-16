@@ -39,23 +39,27 @@ function getID(){
 
 
 // 添加
-function addDemo($module,$intro,$version,$html,$js,$css,$author) {
+function addDemo($module, $intro, $version, $html, $js, $css, $author) {
 	global $db;
 
 	if ($module == "") {
-		return Response(false, "请选择demo对应的模块", null);
+		return Response(false, "请填写 DEMO 模块", null);
 	}
 	
 	if ($intro == "") {
-		return Response(false, "请填写demo对应的简介", null);
+		return Response(false, "请填写 DEMO 简介", null);
 	}
-	
+
 	if (!preg_match ("/^\d{1}\.\d{1}\.\d{1}$/", $version)) {
-		return Response(false, "请选择demo适合的版本, 例如1.3.0", null);
+		return Response(false, "请填写 DEMO 版本", null);
 	}
 	
 	if ($html == "") {
-		return Response(false, "请输入demo内容", null);
+		return Response(false, "请填写 DEMO 内容", null);
+	}
+
+	if ($author == "") {
+		return Response(false, "请填写您的花名", null);
 	}
 	
 	$result = $db->autoExecute("demo",array(
@@ -70,35 +74,39 @@ function addDemo($module,$intro,$version,$html,$js,$css,$author) {
 	), 1);
 	
 	if ($result) {
-		return Response(true, "修改成功", null);
+		return Response(true, "添加成功", null);
 	} else {
-		return Response(true, "修改成功", null);
+		return Response(true, "添加成功", null);
 	}
 	
 }
 
 // 修改
-function editDemo($id,$module,$intro,$version,$html,$js,$css,$author){
+function editDemo($id, $module, $intro, $version, $html, $js, $css, $author){
 	global $db;
 	
 	if ($id == "") {
-		return Response(false, "请带上要修改demo的id", null);
+		return Response(false, "请填写 DEMO ID", null);
 	}
 	
 	if ($module == "") {
-		return Response(false, "请选择demo对应的模块", null);
+		return Response(false, "请填写 DEMO 模块", null);
 	}
 	
 	if ($intro == "") {
-		return Response(false, "请填写demo对应的简介", null);
+		return Response(false, "请填写 DEMO 简介", null);
 	}
-	
+
 	if (!preg_match ("/^\d{1}\.\d{1}\.\d{1}$/", $version)) {
-		return Response(false, "请选择demo适合的版本, 例如1.3.0", null);
+		return Response(false, "请填写 DEMO 版本", null);
 	}
 	
 	if ($html == "") {
-		return Response(false, "请输入demo内容", null);
+		return Response(false, "请填写 DEMO 内容", null);
+	}
+
+	if ($author == "") {
+		return Response(false, "请填写您的花名", null);
 	}
 	
 	$result = $db -> autoExecute("demo", array(

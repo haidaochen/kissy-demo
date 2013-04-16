@@ -74,16 +74,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   Code.prototype.update = function(e) {
     var self = this;
 
-    var el = $(e.currentTarget),
-        cb = function(res) {
-          if (res.status) {
-            self._tips(true, res.message);
-          } else {
-            self._tips(false, res.message);
-          }
-        };
-
-    self._ajax(el, './act/edit.php', self.makeDemoInfo('update'), cb);
+    self._ajax(e, './act/edit.php', self.makeDemoInfo('update'));
   };
 
   /**
@@ -92,16 +83,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   Code.prototype.commit = function(e) {
     var self = this;
 
-    var el = $(e.currentTarget),
-        cb = function(res) {
-          if (res.status) {
-            self._tips(true, res.message);
-          } else {
-            self._tips(false, res.message);
-          }
-        };
-
-    self._ajax(el, './act/add.php', self.makeDemoInfo('commit'), cb);
+    self._ajax(e, './act/add.php', self.makeDemoInfo('commit'));
   };
 
   /**
