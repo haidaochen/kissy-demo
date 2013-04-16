@@ -68,31 +68,40 @@ KISSY.add('demo/base', function(S, Node, IO) {
 
   /**
    * 提交防洪
-   * @param {String}   el
+   * @param {Object}   e
    * @param {String}   url
    * @param {Object}   data
    * @param {Function} cb
    */
-  Base.prototype._ajax = function(el, url, data, cb) {
-    var self    = this,
-        elId    = el.attr('id'),
-        iconEl  = el.one('i'),
-        iconCls = iconEl.attr('class');
+  Base.prototype._ajax = function(e, url, data, cb) {
+    var self     = this,
+        target   = $(e.currentTarget),
+        targetId = target.attr('id'),
+        iconEl   = target.one('i'),
+        iconCls  = iconEl.attr('class');
 
-    el.removeAttr('id');
-    el.addClass('disabled');
+    // 禁用监听
+    target.removeAttr('id');
+    target.addClass('disabled');
 
+    // 更换图标
     iconEl.removeAttr('class');
-    iconEl.addClass("icon-refresh icon-spin");
+    iconEl.addClass("icon-spinner icon-spin");
     
     IO.post(url, data, function(res) {
-      el.attr('id', elId);
-      el.removeClass('disabled');
+      // 恢复监听
+      target.attr('id', targetId);
+      target.removeClass('disabled');
 
+      // 还原图标
       iconEl.removeAttr('class');
       iconEl.addClass(iconCls);
 
-      cb(res);
+      // 提示信息
+      res.status ? self._tips(true, res.message) : self._tips(false, res.message);
+
+      // 招待回调
+      cb && cb(res);
     });
   };
 
