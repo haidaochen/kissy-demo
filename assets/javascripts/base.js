@@ -119,7 +119,7 @@ KISSY.add('demo/base', function(S, Node, IO) {
 
     TIPS_T = setTimeout(function() {
       TIPS_EL.html('').slideUp(0.1);
-    }, 1000);
+    }, 2000);
   };
 
   /**
