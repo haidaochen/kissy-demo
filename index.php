@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Kissy Demo</title>
-    <link rel="stylesheet" href="../assets/build/style-min.css">
+    <link rel="stylesheet" href="./assets/build/style-min.css">
   </head>
   <body>
     <div class="wrap">
@@ -65,8 +65,8 @@
       </aside>
     </div>
     <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js"></script>
-    <script src="../assets/build/ace/ace.js"></script>
-    <script src="../assets/build/index-min.js"></script>
+    <script src="./assets/build/ace/ace.js"></script>
+    <script src="./assets/build/index-min.js"></script>
     </script>
   </body>
 </html>

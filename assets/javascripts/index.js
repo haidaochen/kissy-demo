@@ -7,7 +7,7 @@
 KISSY.config({
   packages: {
     demo: {
-      base: '../assets/build',
+      base: './assets/build',
       tag : +new Date()
     }
   }
