@@ -113,12 +113,24 @@ KISSY.add('demo/base', function(S, Node, IO) {
   Base.prototype._tips = function(type, info) {
     var self = this;
 
+    // 清除定时
     TIPS_T && clearTimeout(TIPS_T);
-    type ? TIPS_EL.removeClass('error') : TIPS_EL.addClass('error');
-    TIPS_EL.html(info).slideDown(0.1);
 
+    // 拼装内容
+    if (type) {
+      TIPS_EL.removeClass('error');
+      TIPS_EL.html('<i class="icon-ok"></i>' + info);
+    } else {
+      TIPS_EL.addClass('error');
+      TIPS_EL.html('<i class="icon-remove"></i>' + info);
+    }
+
+    // 展示动画
+    TIPS_EL.slideDown(0.2);
+
+    // 创建定时
     TIPS_T = setTimeout(function() {
-      TIPS_EL.html('').slideUp(0.1);
+      TIPS_EL.html('').slideUp(0.2);
     }, 2000);
   };
 
