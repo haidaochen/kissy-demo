@@ -1683,6 +1683,25 @@ body a:hover {
 }
 
 /* line 40, ../src/style.sass */
+.tips {
+  display: none;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  font-size: 14px;
+  color: white;
+  background: #468847;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+
+/* line 50, ../src/style.sass */
+.error {
+  background: #b94a48;
+}
+
+/* line 53, ../src/style.sass */
 .head {
   padding: 15px 0;
   margin-bottom: 40px;
@@ -1695,7 +1714,7 @@ body a:hover {
   border-width: 4px;
   overflow: hidden;
 }
-/* line 49, ../src/style.sass */
+/* line 62, ../src/style.sass */
 .head .nav-docs {
   display: inline;
   float: left;
@@ -1706,44 +1725,44 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
 }
-/* line 55, ../src/style.sass */
+/* line 68, ../src/style.sass */
 .head .nav-docs a {
   padding: 7px 10px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
 }
-/* line 59, ../src/style.sass */
+/* line 72, ../src/style.sass */
 .head .nav-docs .current {
   background: #202020;
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
   box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
 }
-/* line 63, ../src/style.sass */
+/* line 76, ../src/style.sass */
 .head .module {
   display: inline;
   float: left;
   padding-left: 20px;
 }
-/* line 67, ../src/style.sass */
+/* line 80, ../src/style.sass */
 .head .module li {
   display: inline;
   float: left;
   margin-right: 20px;
 }
-/* line 71, ../src/style.sass */
+/* line 84, ../src/style.sass */
 .head .module li .current {
   color: #84bcde;
 }
 
-/* line 74, ../src/style.sass */
+/* line 87, ../src/style.sass */
 .wrap {
   padding: 0 20px 20px;
   overflow: hidden;
 }
 
-/* line 78, ../src/style.sass */
+/* line 91, ../src/style.sass */
 .cont, .side {
   display: inline;
   float: right;
@@ -1751,15 +1770,15 @@ body a:hover {
   margin-bottom: -9999px;
 }
 
-/* line 83, ../src/style.sass */
+/* line 96, ../src/style.sass */
 .cont {
   width: 100%;
 }
-/* line 86, ../src/style.sass */
+/* line 99, ../src/style.sass */
 .cont .main {
   margin-left: 220px;
 }
-/* line 89, ../src/style.sass */
+/* line 102, ../src/style.sass */
 .cont .main .main-hd {
   height: 35px;
   margin-bottom: 15px;
@@ -1769,12 +1788,12 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 95, ../src/style.sass */
+/* line 108, ../src/style.sass */
 .cont .main .main-hd h1 {
   font-size: 35px;
   color: white;
 }
-/* line 99, ../src/style.sass */
+/* line 112, ../src/style.sass */
 .cont .main .main-hd .add, .cont .main .main-hd .back {
   display: inline;
   float: right;
@@ -1782,16 +1801,16 @@ body a:hover {
   font-size: 18px;
   color: #84bcde;
 }
-/* line 105, ../src/style.sass */
+/* line 118, ../src/style.sass */
 .cont .main .main-hd .btn {
   margin-right: 10px;
 }
-/* line 108, ../src/style.sass */
+/* line 121, ../src/style.sass */
 .cont .main .main-bd {
   margin-bottom: 15px;
   overflow: hidden;
 }
-/* line 114, ../src/style.sass */
+/* line 127, ../src/style.sass */
 .cont .list li {
   padding: 10px 15px;
   margin-bottom: 15px;
@@ -1803,25 +1822,25 @@ body a:hover {
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 121, ../src/style.sass */
+/* line 134, ../src/style.sass */
 .cont .list li a {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 125, ../src/style.sass */
+/* line 138, ../src/style.sass */
 .cont .code {
   display: none;
 }
-/* line 128, ../src/style.sass */
+/* line 141, ../src/style.sass */
 .cont .code .column {
   display: inline;
   float: left;
 }
-/* line 130, ../src/style.sass */
+/* line 143, ../src/style.sass */
 .cont .code .column:first-child {
   margin-right: 15px;
 }
-/* line 133, ../src/style.sass */
+/* line 146, ../src/style.sass */
 .cont .code .window {
   margin-bottom: 15px;
   width: 100%;
@@ -1829,7 +1848,7 @@ body a:hover {
   line-height: 18px;
   background: white;
 }
-/* line 140, ../src/style.sass */
+/* line 153, ../src/style.sass */
 .cont .btn {
   cursor: pointer;
   display: -moz-inline-stack;
@@ -1840,26 +1859,36 @@ body a:hover {
   *display: inline;
   padding: 5px 10px;
   color: #333333;
-  border: 1px solid #333333;
+  border: 1px solid black;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+  background: whitesmoke;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #e6e6e6));
   background-image: -webkit-linear-gradient(#ffffff, #e6e6e6);
   background-image: -moz-linear-gradient(#ffffff, #e6e6e6);
   background-image: -o-linear-gradient(#ffffff, #e6e6e6);
   background-image: linear-gradient(#ffffff, #e6e6e6);
 }
-/* line 148, ../src/style.sass */
+/* line 162, ../src/style.sass */
 .cont .btn:hover {
   text-decoration: none;
+  background: #e6e6e6;
+  background-position: 0 -29px;
 }
-/* line 151, ../src/style.sass */
+/* line 167, ../src/style.sass */
 .cont .btn i {
   margin-right: 5px;
 }
+/* line 170, ../src/style.sass */
+.cont .disabled {
+  cursor: default;
+  color: #666666;
+  background: #e6e6e6;
+  background-image: none;
+}
 
-/* line 154, ../src/style.sass */
+/* line 176, ../src/style.sass */
 .side {
   margin-right: -200px;
   padding-right: 19px;
@@ -1869,7 +1898,7 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
 }
-/* line 160, ../src/style.sass */
+/* line 182, ../src/style.sass */
 .side h2 {
   padding: 5px 0;
   margin-bottom: 15px;
@@ -1881,14 +1910,14 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 170, ../src/style.sass */
+/* line 192, ../src/style.sass */
 .side .method dt, .side .method dd {
   padding: 10px 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 174, ../src/style.sass */
+/* line 196, ../src/style.sass */
 .side .method dt {
   cursor: pointer;
   margin: 10px 0 2px;
@@ -1898,13 +1927,13 @@ body a:hover {
   border-radius: 2px 2px 0 0;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 181, ../src/style.sass */
+/* line 203, ../src/style.sass */
 .side .method dt i {
   display: inline;
   float: right;
   margin-left: 10px;
 }
-/* line 185, ../src/style.sass */
+/* line 207, ../src/style.sass */
 .side .method dd {
   display: none;
   -webkit-border-radius: 0 0 2px 2px;
@@ -1912,34 +1941,34 @@ body a:hover {
   border-radius: 0 0 2px 2px;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 190, ../src/style.sass */
+/* line 212, ../src/style.sass */
 .side .method li {
   height: 23px;
   text-align: right;
   line-height: 23px;
 }
-/* line 195, ../src/style.sass */
+/* line 217, ../src/style.sass */
 .side .method li .current {
   color: #84bcde;
 }
-/* line 198, ../src/style.sass */
+/* line 220, ../src/style.sass */
 .side .config {
   display: none;
 }
-/* line 201, ../src/style.sass */
+/* line 223, ../src/style.sass */
 .side .config ul {
   margin-bottom: 10px;
   overflow: hidden;
 }
-/* line 205, ../src/style.sass */
+/* line 227, ../src/style.sass */
 .side .config li {
   line-height: 30px;
 }
-/* line 208, ../src/style.sass */
+/* line 230, ../src/style.sass */
 .side .config .author {
   width: 160px;
 }
-/* line 211, ../src/style.sass */
+/* line 233, ../src/style.sass */
 .side .config .intro {
   width: 160px;
   height: 100px;

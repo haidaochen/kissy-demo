@@ -4,11 +4,13 @@
  * @version 1.0
  */
 
-KISSY.add('demo/base', function(S, Node) {
+KISSY.add('demo/base', function(S, Node, IO) {
 
   var $ = S.all;
 
-  var LIST_EL   = $('#J_List'),
+  var TIPS_T    = null,
+      TIPS_EL   = $('#J_Tips'),
+      LIST_EL   = $('#J_List'),
       CODE_EL   = $('#J_Code'),
       METHOD_EL = $('#J_Method'),
       CONFIG_EL = $('#J_Config');
@@ -65,6 +67,53 @@ KISSY.add('demo/base', function(S, Node) {
   };
 
   /**
+   * 提交防洪
+   * @param {String}   el
+   * @param {String}   url
+   * @param {Object}   data
+   * @param {Function} cb
+   */
+  Base.prototype._ajax = function(el, url, data, cb) {
+    var self    = this,
+        elId    = el.attr('id'),
+        iconEl  = el.one('i'),
+        iconCls = iconEl.attr('class');
+
+    el.removeAttr('id');
+    el.addClass('disabled');
+
+    iconEl.removeAttr('class');
+    iconEl.addClass("icon-refresh icon-spin");
+    
+    IO.post(url, data, function(res) {
+      el.attr('id', elId);
+      el.removeClass('disabled');
+
+      iconEl.removeAttr('class');
+      iconEl.addClass(iconCls);
+
+      cb(res);
+    });
+  };
+
+  /**
+   * 提示信息
+   * @param {Boolean} type
+   * @param {String}  info
+   */
+  Base.prototype._tips = function(type, info) {
+    var self = this;
+
+    TIPS_T && clearTimeout(TIPS_T);
+    type ? TIPS_EL.removeClass('error') : TIPS_EL.addClass('error');
+    TIPS_EL.html(info).slideDown(0.1);
+
+    TIPS_T = setTimeout(function() {
+      TIPS_EL.html('').slideUp(0.1);
+    }, 1000);
+  };
+
+  /**
    * 渲染界面
    * @param {String} state
    */
@@ -96,5 +145,5 @@ KISSY.add('demo/base', function(S, Node) {
   return Base;
 
 }, {
-  requires: ['node']
+  requires: ['node', 'ajax']
 });

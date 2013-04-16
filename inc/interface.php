@@ -38,89 +38,85 @@ function getID(){
 
 
 
-//添加demo
-function addDemo($module,$intro,$version,$html,$js,$css,$author){
+// 添加
+function addDemo($module,$intro,$version,$html,$js,$css,$author) {
 	global $db;
 
-	if($module==""){
-		return Response(true,"请选择demo对应的模块",null);
+	if ($module == "") {
+		return Response(false, "请选择demo对应的模块", null);
 	}
 	
-	if($intro==""){
-		//描述可以为空
+	if ($intro == "") {
+		return Response(false, "请填写demo对应的简介", null);
 	}
 	
-	if(!preg_match ("/^\d{1}\.\d{1}\.\d{1}$/",$version)){
-		return Response(true,"请选择demo适合的版本,例如1.3.0",null);
+	if (!preg_match ("/^\d{1}\.\d{1}\.\d{1}$/", $version)) {
+		return Response(false, "请选择demo适合的版本, 例如1.3.0", null);
 	}
 	
-	if($html==""){
-		return Response(true,"请输入demo内容",null);
+	if ($html == "") {
+		return Response(false, "请输入demo内容", null);
 	}
 	
 	$result = $db->autoExecute("demo",array(
-		"id"		=> getID(),
+		"id"		  => getID(),
 		"module"	=> $module,
 		"intro"		=>$intro,
 		"version"	=> $version,
 		"html"		=> $html,
-		"js"		=> $js,
-		"css"		=> $css,
+		"js"		  => $js,
+		"css"		  => $css,
 		"author"	=> $author
-	),1);
+	), 1);
 	
-	if($result){
-		return Response(true,"success",null);
-	}else{
-		return Response(false,"添加成功",null);
+	if ($result) {
+		return Response(true, "修改成功", null);
+	} else {
+		return Response(true, "修改成功", null);
 	}
 	
 }
 
-
-//修改
+// 修改
 function editDemo($id,$module,$intro,$version,$html,$js,$css,$author){
 	global $db;
 	
-	if($id==""){
-		return Response(true,"请带上要修改demo的id",null);
+	if ($id == "") {
+		return Response(false, "请带上要修改demo的id", null);
 	}
 	
-	if($module==""){
-		return Response(true,"请选择demo对应的模块",null);
+	if ($module == "") {
+		return Response(false, "请选择demo对应的模块", null);
 	}
 	
-	if($intro==""){
-		//描述可以为空
+	if ($intro == "") {
+		return Response(false, "请填写demo对应的简介", null);
 	}
 	
-	if(!preg_match ("/^\d{1}\.\d{1}\.\d{1}$/",$version)){
-		return Response(true,"请选择demo适合的版本,例如1.3.0",null);
+	if (!preg_match ("/^\d{1}\.\d{1}\.\d{1}$/", $version)) {
+		return Response(false, "请选择demo适合的版本, 例如1.3.0", null);
 	}
 	
-	if($html==""){
-		return Response(true,"请输入demo内容",null);
+	if ($html == "") {
+		return Response(false, "请输入demo内容", null);
 	}
 	
-	$result = $db->autoExecute("demo",array(
-		"module"		=> $module,
-		"intro"		=>$intro,
+	$result = $db -> autoExecute("demo", array(
+		"module"  => $module,
+		"intro"		=> $intro,
 		"version"	=> $version,
 		"html"		=> $html,
-		"js"		=> $js,
-		"css"		=> $css,
+		"js"		  => $js,
+		"css"		  => $css,
 		"author"	=> $author
-	),2,"  id='{$id}' ");
+	), 2, "id='{$id}'");
 	
-	if($result){
-		return Response(true,"success",null);
-	}else{
-		return Response(false,"修改成功",null);
+	if ($result) {
+		return Response(true, "修改成功", null);
+	} else {
+		return Response(true, "修改成功", null);
 	}
-	
 }
-
-
 
 //删除任务
 function delDemo($id){

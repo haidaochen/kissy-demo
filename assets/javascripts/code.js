@@ -4,7 +4,7 @@
  * @version 1.0
  */
 
-KISSY.add('demo/code', function(S, Base, Config, Node, IO, XTemplate) {
+KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
 
   var $      = S.all,
       CONFIG = new Config();
@@ -69,25 +69,39 @@ KISSY.add('demo/code', function(S, Base, Config, Node, IO, XTemplate) {
   };
 
   /**
-   * 提交代码
+   * 更新代码
    */
-  Code.prototype.update = function() {
+  Code.prototype.update = function(e) {
     var self = this;
 
-    IO.post('./act/edit.php', self.makeDemoInfo('update'), function(res) {
+    var el = $(e.currentTarget),
+        cb = function(res) {
+          if (res.status) {
+            self._tips(true, res.message);
+          } else {
+            self._tips(false, res.message);
+          }
+        };
 
-    });
+    self._ajax(el, './act/edit.php', self.makeDemoInfo('update'), cb);
   };
 
   /**
-   * 更新代码
+   * 提交代码
    */
-  Code.prototype.commit = function() {
+  Code.prototype.commit = function(e) {
     var self = this;
 
-    IO.post('./act/add.php', self.makeDemoInfo('commit'), function(res) {
+    var el = $(e.currentTarget),
+        cb = function(res) {
+          if (res.status) {
+            self._tips(true, res.message);
+          } else {
+            self._tips(false, res.message);
+          }
+        };
 
-    });
+    self._ajax(el, './act/add.php', self.makeDemoInfo('commit'), cb);
   };
 
   /**
@@ -225,6 +239,6 @@ KISSY.add('demo/code', function(S, Base, Config, Node, IO, XTemplate) {
 
 }, {
 
-  requires: ['demo/base', 'demo/config', 'node', 'ajax', 'xtemplate']
+  requires: ['demo/base', 'demo/config', 'node', 'xtemplate']
 
 });
