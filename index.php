@@ -9,7 +9,10 @@
     <div class="wrap">
       <header class="head">
         <nav class="nav-docs">
-          <a href="javascript:;" class="current">core</a><a href="javascript:;">component</a></nav>
+          <a href="javascript:;" class="current">种子</a>
+          <a href="javascript:;">核心</a>
+          <a href="javascript:;">扩展</a>
+        </nav>
         <nav id="J_Module" class="module"></nav>
       </header>
       <div id="J_Cont" class="cont">
