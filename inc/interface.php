@@ -74,9 +74,9 @@ function addDemo($module, $intro, $version, $html, $js, $css, $author) {
 	), 1);
 	
 	if ($result) {
-		return Response(true, "修改成功", null);
+		return Response(true, "添加成功", null);
 	} else {
-		return Response(true, "修改成功", null);
+		return Response(true, "添加成功", null);
 	}
 	
 }
