@@ -79,14 +79,14 @@ class SimpleDB
      */
     function connect($db_host, $db_user, $db_passwd, $db_name, $is_pconnect){
         if ($is_pconnect){
-            return $this->dbLink = @mysql_pconnect($db_host, $db_user, $db_passwd);
+            return $this->dbLink = mysql_pconnect($db_host, $db_user, $db_passwd);
         }
         $this->dbLink = @mysql_connect($db_host, $db_user, $db_passwd);
-        @mysql_select_db($db_name, $this->dbLink);
+        mysql_select_db($db_name, $this->dbLink);
         $mysql_version = $this->getOne("SELECT VERSION()");
         if ($this->dbCharset!='' && preg_match("/^(5.|4.1)/", $mysql_version)){
             $this->query("SET NAMES '$this->dbCharset'", $this->dbLink);
-        }        
+        }
         return $this->dbLink;
     }
     
@@ -106,6 +106,7 @@ class SimpleDB
      * @param int $modeType 设置查询结果返回设置,1为关联索引和数字所有都有,2为使用关联索引,3为使用数字索引
      */
     function setFetchMode($modeType){
+        return;
         switch ($modeType){
             case 1:    //数字索引和关联索引都有
                 $this->fetchMode = MYSQL_BOTH;
@@ -210,7 +211,7 @@ class SimpleDB
             return false;
         }
         $this->dbRecord = array();
-        while ($row = @mysql_fetch_array($this->dbResult, $this->fetchMode)) {
+        while ($row = @mysql_fetch_assoc($this->dbResult)) {
             $this->dbRecord[] = $row;
         }
         @mysql_free_result($this->dbResult);
@@ -231,7 +232,7 @@ class SimpleDB
             return false;
         }
         $this->dbRecord = array();
-        $this->dbRecord = @mysql_fetch_array($this->dbResult, $this->fetchMode);
+        $this->dbRecord = @mysql_fetch_assoc($this->dbResult);
         @mysql_free_result($this->dbResult);
         if (!is_array($this->dbRecord) || empty($this->dbRecord)){
             return false;
@@ -251,7 +252,7 @@ class SimpleDB
             return false;
         }
         $this->dbRecord = array();
-        while($row = @mysql_fetch_array($this->dbResult, $this->fetchMode)){
+        while($row = @mysql_fetch_assoc($this->dbResult)){
             if (trim($field) == ''){
                 $this->dbRecord[] = current($row);
             } else {
@@ -276,7 +277,7 @@ class SimpleDB
             return false;
         }
         $this->dbRecord = array();
-        $row = @mysql_fetch_array($this->dbResult, $this->fetchMode);
+        $row = @mysql_fetch_assoc($this->dbResult);
         @mysql_free_result($this->dbResult);
         if (!is_array($row) || empty($row)){
             return false;
