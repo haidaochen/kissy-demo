@@ -6,4 +6,3 @@ $GLOBALS['db_user'] = "root";
 $GLOBALS['db_pwd'] = "";
 $GLOBALS['db_name'] = "kissydoc";
 $GLOBALS['db_tablepre'] = "";
-?>

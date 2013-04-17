@@ -494,4 +494,3 @@ class SimpleDB
         return mysql_affected_rows($this->dbLink);
     }
 }
-?>
