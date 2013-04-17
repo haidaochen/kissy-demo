@@ -58,12 +58,12 @@ function addDemo($module, $intro, $version, $html, $js, $css, $author) {
 	
 	$result = $db->autoExecute("demo",array(
 		"id"		  => getID(),
-		"module"	=> $module,
-		"intro"		=>$intro,
-		"version"	=> $version,
-		"html"		=> $html,
-		"js"		  => $js,
-		"css"		  => $css,
+		"module"  => $module,
+		"intro"   =>$intro,
+		"version" => $version,
+		"html"    => mysql_real_escape_string($html),
+		"js"      => mysql_real_escape_string($js),
+		"css"     => mysql_real_escape_string($css),
 		"author"	=> $author
 	), 1);
 	
@@ -105,12 +105,12 @@ function editDemo($id, $module, $intro, $version, $html, $js, $css, $author){
 	
 	$result = $db -> autoExecute("demo", array(
 		"module"  => $module,
-		"intro"		=> $intro,
-		"version"	=> $version,
-		"html"		=> $html,
-		"js"		  => $js,
-		"css"		  => $css,
-		"author"	=> $author
+		"intro"   => $intro,
+		"version" => $version,
+		"html"    => mysql_real_escape_string($html),
+		"js"      => mysql_real_escape_string($js),
+		"css"     => mysql_real_escape_string($css),
+		"author"  => $author
 	), 2, "id='{$id}'");
 	
 	if ($result) {
