@@ -53,14 +53,25 @@ body
 .error
   background: #B94A48
 
+.wrap
+  padding: 100px 20px 0
+  overflow: hidden
+
 .head
-  padding: 15px 0
-  margin-bottom: 40px
-  height: 27px
-  line-height: 27px
+  z-index: 100
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
   +border-shadow("bottom")
   border-width: 4px
+  background: #2F2F2F
   overflow: hidden
+
+  .module
+    padding: 15px 20px
+    height: 27px
+    line-height: 27px
 
   .module-hd
     +float-left
@@ -70,7 +81,7 @@ body
 
     li
       +float-left
-      
+
     a
       padding: 7px 10px
       +border-radius(4px)
@@ -89,10 +100,6 @@ body
 
       .current
         color: $COLOR_LIGHT_LINK
-
-.wrap
-  padding: 0 20px 20px
-  overflow: hidden
 
 .cont, .side
   +float-right

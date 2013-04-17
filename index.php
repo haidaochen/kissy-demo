@@ -7,8 +7,8 @@
   </head>
   <body>
     <div class="wrap">
-      <div id="J_Tips" class="tips"></div>
       <header class="head">
+        <div id="J_Tips" class="tips"></div>
         <nav id="J_Module" class="module">
           <div id="J_ModuleHd" class="module-hd"></div>
           <div id="J_ModuleBd" class="module-bd"></div>
