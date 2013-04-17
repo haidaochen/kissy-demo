@@ -14,8 +14,11 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
    */
   var Module = function() {
     this.el     = $('#J_Module');
+    this.elHd   = $('#J_ModuleHd');
+    this.elBd   = $('#J_ModuleBd');
     this.events = {
-      'click a': 'renderMethod'
+      'click #J_ModuleHd a': 'renderModule',
+      'click #J_ModuleBd a': 'renderMethod'
     };
     this.init();
   };
@@ -31,7 +34,7 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
   Module.prototype.init = function() {
     this.render();
     Module.superclass.constructor.call(this);
-    this.el.one('a').fire('click');
+    this.elHd.one('a').fire('click');
   };
 
   /**
@@ -39,49 +42,71 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
    */
   Module.prototype.render = function() {
     var self = this,
-        tpl, modules = [];
+        tpl;
 
     tpl = [
       '<ul>',
-        '{{#modules}}',
+        '{{#each api}}',
           '<li>',
-            '<a href="javascript:;" data-name="{{name}}" data-index="{{index}}">',
-              '{{name}}',
+            '<a href="javascript:;" title="{{desc}}" data-index="{{xindex}}">',
+              '{{anme}}',
             '</a>',
           '</li>',
-        '{{/modules}}',
+        '{{/each}}',
       '</ul>'
     ].join('');
 
-    S.each(API, function(module, i) {
-      modules.push({
-        name : module.name,
-        index: i
-      });
-    });
+    var buffer = new XTemplate(tpl).render({api: API});
 
-    var buffer = new XTemplate(tpl).render({modules: modules});
-
-    self.el.html(buffer);
+    self.elHd.html(buffer);
   };
 
   /**
-   * 渲染 Method 模块
+   * 渲染 Module
+   */
+  Module.prototype.renderModule = function(e) {
+    var self   = this,
+        target = $(e.currentTarget),
+        index  = target.attr('data-index');
+
+    self.elHd.all('a').removeClass('current');
+    target.addClass('current');
+
+    tpl = [
+      '<ul>',
+        '{{#each modules}}',
+          '<li>',
+            '<a href="javascript:;" data-name="{{name}}" data-index="{{xindex}}" data-module-index="' + index + '">',
+              '{{name}}',
+            '</a>',
+          '</li>',
+        '{{/each}}',
+      '</ul>'
+    ].join('');
+
+    var buffer = new XTemplate(tpl).render({modules: API[index].subcats});
+
+    self.elBd.html(buffer);
+    self.elBd.one('a').fire('click');
+  };
+
+  /**
+   * 渲染 Method
    */
   Module.prototype.renderMethod = function(e) {
     var self   = this,
         target = $(e.currentTarget),
         name   = target.attr('data-name'),
-        index  = parseInt(target.attr('data-index'));
+        index  = target.attr('data-index');
+        mindex = target.attr('data-module-index');
 
+    self.elBd.all('a').removeClass('current');
     target.addClass('current');
-
-    self.prevTarget && self.prevTarget.html() !== name && self.prevTarget.removeClass('current');
-    self.prevTarget = target;
     
     self._render('list');
     self._set('module', name);
-    METHOD.render(index);
+
+    METHOD.render(mindex, index);
   };
 
   return Module;

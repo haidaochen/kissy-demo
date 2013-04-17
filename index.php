@@ -7,14 +7,12 @@
   </head>
   <body>
     <div class="wrap">
-      <div id="J_Tips" class="tips"></div>
       <header class="head">
-        <nav class="nav-docs">
-          <a href="javascript:;" class="current">种子</a>
-          <a href="javascript:;">核心</a>
-          <a href="javascript:;">扩展</a>
+        <div id="J_Tips" class="tips"></div>
+        <nav id="J_Module" class="module">
+          <div id="J_ModuleHd" class="module-hd"></div>
+          <div id="J_ModuleBd" class="module-bd"></div>
         </nav>
-        <nav id="J_Module" class="module"></nav>
       </header>
       <div id="J_Cont" class="cont">
 

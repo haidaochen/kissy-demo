@@ -57,7 +57,7 @@ KISSY.add('demo/list', function(S, Base, Code, Node, IO, XTemplate) {
     IO.post('./act/list.php', {module: self._makeQueryId()}, function(res) {
       var buffer = new XTemplate(tpl).render({demo: res.data});
 
-      self.elHd.html(self._get('method') + ' Demo');
+      self.elHd.html(self._makeQueryId() + ' Demo');
       self.elBd.html(buffer);
     });
   };

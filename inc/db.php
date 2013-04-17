@@ -30,7 +30,7 @@ class SimpleDB
      * 数据库结果集提取方式
      * @var int
      */
-    var $fetchMode = MYSQL_ASSOC;
+    var $fetchMode = '';
     /**
      * 日志保存路径
      * @var string

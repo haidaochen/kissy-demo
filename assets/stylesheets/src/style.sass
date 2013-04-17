@@ -53,20 +53,34 @@ body
 .error
   background: #B94A48
 
-.head
-  padding: 15px 0
-  margin-bottom: 40px
-  height: 27px
-  line-height: 27px
-  +border-shadow("bottom")
-  border-width: 4px
+.wrap
+  padding: 100px 20px 0
   overflow: hidden
 
-  .nav-docs
+.head
+  z-index: 100
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  +border-shadow("bottom")
+  border-width: 4px
+  background: #2F2F2F
+  overflow: hidden
+
+  .module
+    padding: 15px 20px
+    height: 27px
+    line-height: 27px
+
+  .module-hd
     +float-left
     padding-right: 19px
     width: 180px
     +border-shadow("right")
+
+    li
+      +float-left
 
     a
       padding: 7px 10px
@@ -76,7 +90,7 @@ body
       background: #202020
       +box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset)
 
-  .module
+  .module-bd
     +float-left
     padding-left: 20px
 
@@ -86,10 +100,6 @@ body
 
       .current
         color: $COLOR_LIGHT_LINK
-
-.wrap
-  padding: 0 20px 20px
-  overflow: hidden
 
 .cont, .side
   +float-right
