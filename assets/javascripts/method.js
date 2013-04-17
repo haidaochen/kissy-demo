@@ -82,8 +82,8 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
 
     self.elHd.html(module.name);
     self.elBd.html(buffer);
-    self.elBd.one('a').fire('click');
-    self.elBd.one('dt').fire('click');
+    self.elBd.one('a') && self.elBd.one('a').fire('click');
+    self.elBd.one('dt') && self.elBd.one('dt').fire('click');
   };
 
   /**
