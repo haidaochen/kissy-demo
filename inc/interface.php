@@ -1,7 +1,5 @@
 <?php
 include("conn.php");
-include("common.php");
-
 
 function Response($status,$msg,$data,$code=''){
 	$result = array(
@@ -13,7 +11,6 @@ function Response($status,$msg,$data,$code=''){
 	return $result;
 }
 
-
 function getRandStr($len){
 	$str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	$output = "";
@@ -22,7 +19,6 @@ function getRandStr($len){
 	}  
 	return $output;  
 }
-
 
 function getID(){
 	global $db;
@@ -35,8 +31,6 @@ function getID(){
 		return $id;
 	}
 }
-
-
 
 // 添加
 function addDemo($module, $intro, $version, $html, $js, $css, $author) {
@@ -176,6 +170,4 @@ function demoList($module){
 		return Response(false,"获取demo失败",null);
 	}
 }
-
-
 ?>
