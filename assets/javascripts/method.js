@@ -37,9 +37,10 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
 
   /**
    * 渲染界面
-   * @param {Number} index
+   * @param {String} mindex
+   * @param {String} index
    */
-  Method.prototype.render = function(index) {
+  Method.prototype.render = function(mindex, index) {
     var self = this,
         tpl;
 
@@ -76,12 +77,13 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
       '{{/module}}'
     ].join('');
 
-    var module = API[index],
+    var module = API[mindex]['subcats'][index],
         buffer = new XTemplate(tpl).render({module: module});
 
     self.elHd.html(module.name);
     self.elBd.html(buffer);
     self.elBd.one('a').fire('click');
+    self.elBd.one('dt').fire('click');
   };
 
   /**
