@@ -1426,7 +1426,7 @@ return [
             {
                 "name":"ComboBox",
                 "desc":"",
-                "slug":"http://docs.kissyui.com/docs/html/api/component/combobox/index.html"
+                "slug":"http://docs.kissyui.com/docs/html/api/component/combobox/index.html",
                 "subcats":[{
                     "name":"ComboBox",
                     "desc":"复合输入框",
