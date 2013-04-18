@@ -51,7 +51,7 @@
         <!--E code -->
 
       </div>
-      <aside class="side">
+      <aside id="J_Side" class="side">
         
         <!--S method -->
         <nav id="J_Method" class="method">
