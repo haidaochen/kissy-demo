@@ -1729,7 +1729,7 @@ body a:hover {
 /* line 71, ../src/style.sass */
 .head .module {
   padding: 15px 20px;
-  height: 27px;
+  min-height: 27px;
   line-height: 27px;
 }
 /* line 76, ../src/style.sass */
@@ -1764,9 +1764,8 @@ body a:hover {
 }
 /* line 93, ../src/style.sass */
 .head .module-bd {
-  display: inline;
-  float: left;
   padding-left: 20px;
+  overflow: hidden;
 }
 /* line 97, ../src/style.sass */
 .head .module-bd li {
