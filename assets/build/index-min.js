@@ -1,1 +1,1 @@
-KISSY.config({packages:{demo:{base:"./assets/build",tag:+new Date}}}),KISSY.use("demo/module",function(e,a){new a});
+KISSY.config({packages:{demo:{base:"./assets/build",tag:+new Date}}}),KISSY.add("demo/index",function(e,i,t){var n=e.all;new t;var s=function(){this.sideEl=n("#J_Side"),this.init()};return e.extend(s,i),s.prototype.init=function(){this.render(),s.superclass.constructor.call(this)},s.prototype.render=function(){var e=this;e.sideEl.css("height",n(window).height()-120)},s},{requires:["demo/base","demo/module"]}),KISSY.use("demo/index",function(e,i){new i});
