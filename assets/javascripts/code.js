@@ -56,7 +56,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
     }
 
     CONFIG.render(demo);
-    self.setEditorVal(demo || {});
+    self.setEditorVal(demo);
   };
 
   /**
@@ -138,6 +138,25 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
    */
   Code.prototype.setEditorVal = function(demo) {
     var self = this;
+
+    /**
+     * 设置默认值
+     */
+    if (!demo) {
+      var demo = {};
+
+      demo.html = [
+        '<!-- HTML -->\r\n',
+        '<!-- PS:所填内容直接添入 BODY 标签 -->\r\n'
+      ].join('');
+
+      demo.css  = '/* CSS */\r\n';
+
+      demo.js   = [
+        '/* JS */\r\n',
+        '/* PS:Kissy 1.3 已默认加载 */\r\n'
+      ].join('');
+    }
 
     self.htmlEditor.setValue(demo.html);
     self.htmlEditor.focus();
