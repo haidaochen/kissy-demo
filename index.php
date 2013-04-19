@@ -66,7 +66,15 @@
 
       </aside>
     </div>
-    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js"></script>
+    
+    <?php 
+      $ENV = "";
+      if (strpos($_SERVER['REQUEST_URI'], 'dev') !== FALSE) {
+        $ENV = "dev";
+      }
+    ?>
+
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js" <?php if ($ENV != "dev") { ?>data-config="{combine:true}"<?php } ?>></script>
     <script src="./assets/build/ace/ace.js"></script>
     <script src="./assets/build/index-min.js"></script>
     </script>
