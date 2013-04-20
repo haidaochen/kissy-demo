@@ -36,13 +36,13 @@
             <a href="javascript:;" id="J_Debug" class="btn"><i class="icon-play-circle"></i>预览</a>
           </header>
           <div class="main-bd">
-            <fieldset class="column">
-              <div id="J_HtmlWin" class="window"></div>
-              <div id="J_JsWin" class="window"></div>
+            <fieldset class="column left">
+              <div id="J_HtmlWin" class="window top"></div>
+              <div id="J_JsWin" class="window bottom"></div>
             </fieldset>
-            <fieldset class="column">
-              <div id="J_CssWin" class="window"></div>
-              <div id="J_ResultWin" class="window">
+            <fieldset class="column right">
+              <div id="J_CssWin" class="window top"></div>
+              <div id="J_ResultWin" class="window bottom">
                 <iframe id="J_Result" width="100%" height="100%"></iframe>
               </div>
             </fieldset>

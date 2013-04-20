@@ -35,7 +35,6 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
    * 程序初始化
    */
   Code.prototype.init = function() {
-    this.resetColumns();
     this.createEditor();
     Code.superclass.constructor.call(this);
   };
@@ -96,17 +95,6 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       self.iframe.open();
       self.iframe.write(code);
       self.iframe.close();
-  };
-
-  /**
-   * 设置列宽
-   */
-  Code.prototype.resetColumns = function() {
-    var self     = this,
-        contEl   = $('#J_Cont'),
-        columnEl = $('.column', contEl);
-
-    columnEl.width((contEl.width() - 250) / 2);
   };
 
   /**

@@ -1846,23 +1846,42 @@ body a:hover {
   display: none;
 }
 /* line 152, ../src/style.sass */
-.cont .code .column {
-  display: inline;
-  float: left;
-}
-/* line 154, ../src/style.sass */
-.cont .code .column:first-child {
-  margin-right: 15px;
+.cont .code .main-bd {
+  height: 600px;
+  position: relative;
+  padding: 5px;
 }
 /* line 157, ../src/style.sass */
-.cont .code .window {
-  margin-bottom: 15px;
+.cont .code .main-bd .left {
+  left: -5px;
+}
+/* line 160, ../src/style.sass */
+.cont .code .main-bd .right {
+  right: -5px;
+}
+/* line 163, ../src/style.sass */
+.cont .code .main-bd .top {
+  top: -5px;
+}
+/* line 166, ../src/style.sass */
+.cont .code .main-bd .bottom {
+  bottom: -5px;
+}
+/* line 169, ../src/style.sass */
+.cont .code .main-bd .column {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+/* line 174, ../src/style.sass */
+.cont .code .main-bd .window {
+  position: absolute;
   width: 100%;
-  height: 300px;
+  height: 50%;
   line-height: 18px;
   background: white;
 }
-/* line 164, ../src/style.sass */
+/* line 181, ../src/style.sass */
 .cont .btn {
   cursor: pointer;
   display: -moz-inline-stack;
@@ -1884,17 +1903,17 @@ body a:hover {
   background-image: -o-linear-gradient(#ffffff, #e6e6e6);
   background-image: linear-gradient(#ffffff, #e6e6e6);
 }
-/* line 173, ../src/style.sass */
+/* line 190, ../src/style.sass */
 .cont .btn:hover {
   text-decoration: none;
   background: #e6e6e6;
   background-position: 0 -29px;
 }
-/* line 178, ../src/style.sass */
+/* line 195, ../src/style.sass */
 .cont .btn i {
   margin-right: 5px;
 }
-/* line 181, ../src/style.sass */
+/* line 198, ../src/style.sass */
 .cont .disabled {
   cursor: default;
   color: #666666;
@@ -1902,7 +1921,7 @@ body a:hover {
   background-image: none;
 }
 
-/* line 187, ../src/style.sass */
+/* line 204, ../src/style.sass */
 .side {
   position: fixed;
   margin-right: -200px;
@@ -1914,7 +1933,7 @@ body a:hover {
   box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   overflow: auto;
 }
-/* line 195, ../src/style.sass */
+/* line 212, ../src/style.sass */
 .side h2 {
   padding: 5px 0;
   margin-bottom: 15px;
@@ -1926,14 +1945,14 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 205, ../src/style.sass */
+/* line 222, ../src/style.sass */
 .side .method dt, .side .method dd {
   padding: 10px 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 209, ../src/style.sass */
+/* line 226, ../src/style.sass */
 .side .method dt {
   cursor: pointer;
   margin: 10px 0 2px;
@@ -1943,13 +1962,13 @@ body a:hover {
   border-radius: 2px 2px 0 0;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 216, ../src/style.sass */
+/* line 233, ../src/style.sass */
 .side .method dt i {
   display: inline;
   float: right;
   margin-left: 10px;
 }
-/* line 220, ../src/style.sass */
+/* line 237, ../src/style.sass */
 .side .method dd {
   display: none;
   -webkit-border-radius: 0 0 2px 2px;
@@ -1957,34 +1976,34 @@ body a:hover {
   border-radius: 0 0 2px 2px;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 225, ../src/style.sass */
+/* line 242, ../src/style.sass */
 .side .method li {
   height: 23px;
   text-align: right;
   line-height: 23px;
 }
-/* line 230, ../src/style.sass */
+/* line 247, ../src/style.sass */
 .side .method li .current {
   color: #84bcde;
 }
-/* line 233, ../src/style.sass */
+/* line 250, ../src/style.sass */
 .side .config {
   display: none;
 }
-/* line 236, ../src/style.sass */
+/* line 253, ../src/style.sass */
 .side .config ul {
   margin-bottom: 10px;
   overflow: hidden;
 }
-/* line 240, ../src/style.sass */
+/* line 257, ../src/style.sass */
 .side .config li {
   line-height: 30px;
 }
-/* line 243, ../src/style.sass */
+/* line 260, ../src/style.sass */
 .side .config .author {
   width: 160px;
 }
-/* line 246, ../src/style.sass */
+/* line 263, ../src/style.sass */
 .side .config .intro {
   width: 160px;
   height: 100px;
