@@ -37,13 +37,25 @@
           </header>
           <div class="main-bd">
             <fieldset class="column left">
-              <div id="J_HtmlWin" class="window top"></div>
-              <div id="J_JsWin" class="window bottom"></div>
+              <div class="editor-wrap top">
+                <span class="editor-label">HTML<i class="icon-fullscreen"></i></span>
+                <div id="J_Html" class="editor"></div>
+              </div>
+              <div class="editor-wrap bottom">
+                <span class="editor-label">JavaScript<i class="icon-fullscreen"></i></span>
+                <div id="J_Js" class="editor"></div>
+              </div>
             </fieldset>
             <fieldset class="column right">
-              <div id="J_CssWin" class="window top"></div>
-              <div id="J_ResultWin" class="window bottom">
-                <iframe id="J_Result" width="100%" height="100%"></iframe>
+              <div class="editor-wrap top">
+                <span class="editor-label">CSS<i class="icon-fullscreen"></i></span>
+                <div id="J_Css" class="editor"></div>
+              </div>
+              <div class="editor-wrap bottom">
+                <span class="editor-label">预览<i class="icon-fullscreen"></i></span>
+                <div class="editor">
+                  <iframe id="J_Preview" width="100%" height="100%"></iframe>
+                </div>
               </div>
             </fieldset>
           </div>

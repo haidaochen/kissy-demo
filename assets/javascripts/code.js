@@ -22,7 +22,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       'click #J_Update': 'update',
       'click #J_Debug' : 'debug'
     };
-    this.iframe = $('#J_Result')[0].contentWindow.document;
+    this.iframe = $('#J_Preview')[0].contentWindow.document;
     this.init();
   };
 
@@ -115,9 +115,9 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       return editor;
     };
 
-    self.htmlEditor = aceEditor($('#J_HtmlWin'), 'html');
-    self.cssEditor  = aceEditor($('#J_CssWin'), 'css');
-    self.jsEditor   = aceEditor($('#J_JsWin'), 'javascript');
+    self.htmlEditor = aceEditor($('#J_Html'), 'html');
+    self.cssEditor  = aceEditor($('#J_Css'), 'css');
+    self.jsEditor   = aceEditor($('#J_Js'), 'javascript');
   };
 
   /**
@@ -132,18 +132,8 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
      */
     if (!demo) {
       var demo = {};
-
-      demo.html = [
-        '<!-- HTML -->\r\n',
-        '<!-- PS:所填内容直接添入 BODY 标签 -->\r\n'
-      ].join('');
-
-      demo.css  = '/* CSS */\r\n';
-
-      demo.js   = [
-        '/* JS */\r\n',
-        '/* PS:Kissy 1.3 已默认加载 */\r\n'
-      ].join('');
+      demo.html = '<!-- 所填内容直接添入 BODY 标签 -->\r\n';
+      demo.js   = '/* Kissy 1.3 已默认加载 */\r\n';
     }
 
     self.htmlEditor.setValue(demo.html);
@@ -188,14 +178,14 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
             '<meta charset="utf-8" />\r\n',
             '<title>{{module}}</title>\r\n',
             '<style>\r\n',
-              '{{css}}\r\n',
+              '{{{css}}}\r\n',
             '</style>\r\n',
           '</head>\r\n',
           '<body>\r\n',
             '{{{html}}}\r\n',
           '<script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js" data-config="{combine:true}"></script>\r\n',
           '<script>\r\n',
-            '{{js}}\r\n',
+            '{{{js}}}\r\n',
           '</script>\r\n',
       '</body>\r\n',
       '</html>'
