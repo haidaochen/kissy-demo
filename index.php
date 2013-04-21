@@ -29,7 +29,7 @@
 
         <!--S code -->
         <article id="J_Code" class="main code">
-          <header id="J_ListHd" class="main-hd">
+          <header class="main-hd">
             <a href="javascript:;" id="J_Back" class="back">← 返回</a>
             <a href="javascript:;" id="J_Commit" class="btn"><i class="icon-pencil"></i>提交</a>
             <a href="javascript:;" id="J_Update" class="btn"><i class="icon-refresh"></i>更新</a>
@@ -37,24 +37,24 @@
           </header>
           <div class="main-bd">
             <fieldset class="column left">
-              <div class="editor-wrap top">
-                <span class="editor-label">HTML<i class="icon-fullscreen"></i></span>
+              <div class="J_EditorWrap editor-wrap top">
+                <span class="J_EditorLabel editor-label">HTML<i class="J_EditorResize icon-fullscreen" data-editor="Html" data-screen="small"></i></span>
                 <div id="J_Html" class="editor"></div>
               </div>
-              <div class="editor-wrap bottom">
-                <span class="editor-label">JavaScript<i class="icon-fullscreen"></i></span>
+              <div class="J_EditorWrap editor-wrap bottom">
+                <span class="J_EditorLabel editor-label">JavaScript<i class="J_EditorResize icon-fullscreen" data-editor="Js" data-screen="small"></i></span>
                 <div id="J_Js" class="editor"></div>
               </div>
             </fieldset>
             <fieldset class="column right">
-              <div class="editor-wrap top">
-                <span class="editor-label">CSS<i class="icon-fullscreen"></i></span>
+              <div class="J_EditorWrap editor-wrap top">
+                <span class="J_EditorLabel editor-label">CSS<i class="J_EditorResize icon-fullscreen" data-editor="Css" data-screen="small"></i></span>
                 <div id="J_Css" class="editor"></div>
               </div>
-              <div class="editor-wrap bottom">
-                <span class="editor-label">预览<i class="icon-fullscreen"></i></span>
-                <div class="editor">
-                  <iframe id="J_Preview" width="100%" height="100%"></iframe>
+              <div class="J_EditorWrap editor-wrap bottom">
+                <span class="J_EditorLabel editor-label">预览<i class="J_EditorResize icon-fullscreen" data-editor="Preview" data-screen="small"></i></span>
+                <div id="J_Preview" class="editor">
+                  <iframe id="J_PreviewIframe" width="100%" height="100%"></iframe>
                 </div>
               </div>
             </fieldset>
