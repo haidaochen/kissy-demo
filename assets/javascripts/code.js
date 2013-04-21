@@ -135,8 +135,9 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
      */
     if (!demo) {
       var demo = {};
-      demo.html = '<!-- 所填内容直接添入 BODY 标签 -->\r\n';
-      demo.js   = '/* Kissy 1.3 已默认加载 */\r\n';
+      demo.html = '<!-- HTML -->\r\n<!-- 所填内容直接添入 BODY 标签 -->\r\n';
+      demo.css  = '/* CSS */\r\n';
+      demo.js   = '/* JavaScript */\r\n/* Kissy 1.3 已默认加载 */\r\n';
     }
 
     self.Html.setValue(demo.html);
