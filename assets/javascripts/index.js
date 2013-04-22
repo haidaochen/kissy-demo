@@ -21,8 +21,10 @@ KISSY.add('demo/index', function(S, Base, Module) {
    * Index
    */
   var Index = function() {
-    this.sideEl = $('#J_Side');
+    this.sideEl   = $('#J_Side');
+    this.codeBdEl = $('#J_CodeBd');
     this.init();
+    this.bind();
   };
 
   /**
@@ -42,10 +44,24 @@ KISSY.add('demo/index', function(S, Base, Module) {
    * 渲染界面
    */
   Index.prototype.render = function() {
+    var self = this,
+        winH = $(window).height();
+
+    self.sideEl.css('height', winH - 120);
+    self.codeBdEl.css('height', winH - 181);
+  };
+
+  /**
+   * 事件绑定
+   */
+  Index.prototype.bind = function() {
     var self = this;
 
-    self.sideEl.css('height', $(window).height() - 120);
+    $(window).on('resize', function() {
+      self.render();
+    });
   };
+
 
   return Index;
 

@@ -29,13 +29,13 @@
 
         <!--S code -->
         <article id="J_Code" class="main code">
-          <header class="main-hd">
+          <header id="J_CodeHd" class="main-hd">
             <a href="javascript:;" id="J_Back" class="back">← 返回</a>
             <a href="javascript:;" id="J_Commit" class="btn"><i class="icon-pencil"></i>提交</a>
             <a href="javascript:;" id="J_Update" class="btn"><i class="icon-refresh"></i>更新</a>
             <a href="javascript:;" id="J_Debug" class="btn"><i class="icon-play-circle"></i>预览</a>
           </header>
-          <div class="main-bd">
+          <div id="J_CodeBd" class="main-bd">
             <fieldset class="column left">
               <div class="J_EditorWrap editor-wrap top">
                 <span class="J_EditorLabel editor-label">HTML<i class="J_EditorResize icon-fullscreen" data-editor="Html" data-screen="small"></i></span>
