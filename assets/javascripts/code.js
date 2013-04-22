@@ -189,7 +189,10 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
             '{{{html}}}\r\n',
           '<script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js" data-config="{combine:true}"></script>\r\n',
           '<script>\r\n',
-            '{{{js}}}\r\n',
+            'try {\r\n',
+              '{{{js}}}\r\n',
+            '} catch(e) {\r\n',
+            '}\r\n',
           '</script>\r\n',
       '</body>\r\n',
       '</html>'
