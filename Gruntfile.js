@@ -27,14 +27,15 @@ module.exports = function(grunt) {
         uglify: {
             compress: {
                 files: {
-                    './assets/build/index-min.js'      : [DIR_JS + 'index.js'],
-                    './assets/build/demo/api-min.js'   : [DIR_JS + 'api.js'],
-                    './assets/build/demo/base-min.js'  : [DIR_JS + 'base.js'],
-                    './assets/build/demo/list-min.js'  : [DIR_JS + 'list.js'],
-                    './assets/build/demo/code-min.js'  : [DIR_JS + 'code.js'],
-                    './assets/build/demo/module-min.js': [DIR_JS + 'module.js'],
-                    './assets/build/demo/method-min.js': [DIR_JS + 'method.js'],
-                    './assets/build/demo/config-min.js': [DIR_JS + 'config.js']
+                    './assets/build/index-min.js'              : [DIR_JS + 'index.js'],
+                    './assets/build/demo/base-min.js'          : [DIR_JS + 'base.js'],
+                    './assets/build/demo/list-min.js'          : [DIR_JS + 'list.js'],
+                    './assets/build/demo/code-min.js'          : [DIR_JS + 'code.js'],
+                    './assets/build/demo/module-min.js'        : [DIR_JS + 'module.js'],
+                    './assets/build/demo/method-min.js'        : [DIR_JS + 'method.js'],
+                    './assets/build/demo/config-min.js'        : [DIR_JS + 'config.js'],
+                    './assets/build/demo/api/core-min.js'      : [DIR_JS + 'api/core.js'],
+                    './assets/build/demo/api/components-min.js': [DIR_JS + 'api/components.js'],
                 }
             }
         },

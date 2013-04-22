@@ -4,7 +4,7 @@
  * @version 1.0
  */
 
-KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
+KISSY.add('demo/method', function(S, Base, List, Node, XTemplate) {
 
   var $    = S.all,
       LIST = new List();
@@ -12,7 +12,7 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
   /**
    * Method
    */
-  var Method = function() {
+  var Method = function(api) {
     this.el     = $('#J_Method');
     this.elHd   = $('#J_MethodHd');
     this.elBd   = $('#J_MethodBd');
@@ -20,6 +20,7 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
       'click #J_MethodBd a' : 'renderList',
       'click #J_MethodBd dt': 'renderEntries'
     };
+    this.api = api;
     this.init();
   };
 
@@ -77,7 +78,8 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
       '{{/module}}'
     ].join('');
 
-    var module = API[mindex]['subcats'][index],
+    var API    = self.api,
+        module = API[mindex]['subcats'][index],
         buffer = new XTemplate(tpl).render({module: module});
 
     self.elHd.html(module.name);
@@ -125,6 +127,6 @@ KISSY.add('demo/method', function(S, API, Base, List, Node, XTemplate) {
 
 }, {
 
-  requires: ['demo/api', 'demo/base', 'demo/list', 'node', 'xtemplate']
+  requires: ['demo/base', 'demo/list', 'node', 'xtemplate']
 
 });

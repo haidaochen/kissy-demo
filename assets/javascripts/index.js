@@ -13,9 +13,10 @@ KISSY.config({
   }
 });
 
-KISSY.add('demo/index', function(S, Base, Module) {
+
+KISSY.add('demo/index', function(S, Base, Module, APICore, APIComponents) {
   var $      = S.all,
-      MODULE = new Module();
+      MODULE = new Module([].concat(APICore, APIComponents));
 
   /**
    * Index
@@ -67,7 +68,7 @@ KISSY.add('demo/index', function(S, Base, Module) {
 
 }, {
 
-  requires: ['demo/base', 'demo/module']
+  requires: ['demo/base', 'demo/module', 'demo/api/core', 'demo/api/components']
 
 });
 
