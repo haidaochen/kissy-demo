@@ -33,7 +33,7 @@
             <a href="javascript:;" id="J_Back" class="back">← 返回</a>
             <a href="javascript:;" id="J_Commit" class="btn"><i class="icon-pencil"></i>提交</a>
             <a href="javascript:;" id="J_Update" class="btn"><i class="icon-refresh"></i>更新</a>
-            <a href="javascript:;" id="J_Debug" class="btn"><i class="icon-play-circle"></i>预览</a>
+            <a href="javascript:;" id="J_Debug" class="btn"><i class="icon-check"></i>预览</a>
           </header>
           <div id="J_CodeBd" class="main-bd">
             <fieldset class="column left">
