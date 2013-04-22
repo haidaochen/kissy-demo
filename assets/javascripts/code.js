@@ -89,9 +89,39 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   };
 
   /**
+   * 调试开关
+   */
+  Code.prototype.debug = function(e) {
+    var self = this,
+        target = $(e.currentTarget),
+        iconEl = target.one('i');
+
+    var checkIconClass = 'icon-check',
+        emptyIconClass = 'icon-check-empty';
+
+    if (self._get('debug')) {
+
+      iconEl.removeClass(checkIconClass)
+            .addClass(emptyIconClass);
+
+      self._set('debug', false);
+
+    } else {
+
+      iconEl.removeClass(emptyIconClass)
+            .addClass(checkIconClass);
+
+      self._set('debug', true);
+
+      // 开启时默认执行一次代码调试
+      self.debugCode();
+    }
+  };
+
+  /**
    * 调试代码
    */
-  Code.prototype.debug = function() {
+  Code.prototype.debugCode = function() {
     var self = this,
         code = self.getDebugCode(self.getEditorVal());
 
@@ -115,12 +145,18 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       var editor = ace.edit(editor[0]);
           editor.setTheme("ace/theme/dreamweaver");
           editor.getSession().setMode("ace/mode/" + mode);
+          editor.on('change', function() {
+            self._get('debug') && self.debugCode();
+          });
       return editor;
     };
 
     self.Html = aceEditor($('#J_Html'), 'html');
     self.Css  = aceEditor($('#J_Css'), 'css');
     self.Js   = aceEditor($('#J_Js'), 'javascript');
+
+    // 默认开启代码调试
+    self._set('debug', true);
   };
 
   /**
@@ -151,8 +187,6 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
     self.Js.setValue(demo.js);
     self.Js.focus();
     self.Js.clearSelection();
-
-    self.debug();
   };
 
   /**
@@ -189,7 +223,10 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
             '{{{html}}}\r\n',
           '<script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js" data-config="{combine:true}"></script>\r\n',
           '<script>\r\n',
-            '{{{js}}}\r\n',
+            'try {\r\n',
+              '{{{js}}}\r\n',
+            '} catch(e) {\r\n',
+            '}\r\n',
           '</script>\r\n',
       '</body>\r\n',
       '</html>'
