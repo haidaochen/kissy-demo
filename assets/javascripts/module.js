@@ -4,10 +4,9 @@
  * @version 1.0
  */
 
-KISSY.add('demo/module', function(S, /*APICore, APIComponents,*/ Base, Method, Node, XTemplate) {
+KISSY.add('demo/module', function(S, Base, Method, Node, XTemplate) {
 
-  var $      = S.all,
-      METHOD;
+  var $ = S.all, METHOD;
 
   /**
    * Module
@@ -20,8 +19,8 @@ KISSY.add('demo/module', function(S, /*APICore, APIComponents,*/ Base, Method, N
       'click #J_ModuleHd a': 'renderModule',
       'click #J_ModuleBd a': 'renderMethod'
     };
-    this.api = api;
-    METHOD = new Method(api);
+    this.api    = api;
+    METHOD      = new Method(api);
     this.init();
   };
 
@@ -70,7 +69,7 @@ KISSY.add('demo/module', function(S, /*APICore, APIComponents,*/ Base, Method, N
     var self   = this,
         target = $(e.currentTarget),
         index  = target.attr('data-index'),
-        API = self.api;
+        API    = self.api;
 
     self.elHd.all('a').removeClass('current');
     target.addClass('current');
@@ -116,6 +115,6 @@ KISSY.add('demo/module', function(S, /*APICore, APIComponents,*/ Base, Method, N
 
 }, {
 
-  requires: [/*'demo/api/core','demo/api/components',*/ 'demo/base', 'demo/method', 'node', 'xtemplate']
+  requires: ['demo/base', 'demo/method', 'node', 'xtemplate']
 
 });

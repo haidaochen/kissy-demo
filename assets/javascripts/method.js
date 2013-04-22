@@ -4,7 +4,7 @@
  * @version 1.0
  */
 
-KISSY.add('demo/method', function(S, /*APICore, APIComponents,*/ Base, List, Node, XTemplate) {
+KISSY.add('demo/method', function(S, Base, List, Node, XTemplate) {
 
   var $    = S.all,
       LIST = new List();
@@ -78,7 +78,7 @@ KISSY.add('demo/method', function(S, /*APICore, APIComponents,*/ Base, List, Nod
       '{{/module}}'
     ].join('');
 
-    var API = self.api,
+    var API    = self.api,
         module = API[mindex]['subcats'][index],
         buffer = new XTemplate(tpl).render({module: module});
 
@@ -127,6 +127,6 @@ KISSY.add('demo/method', function(S, /*APICore, APIComponents,*/ Base, List, Nod
 
 }, {
 
-  requires: [/*'demo/api/core','demo/api/components',*/ 'demo/base', 'demo/list', 'node', 'xtemplate']
+  requires: ['demo/base', 'demo/list', 'node', 'xtemplate']
 
 });
