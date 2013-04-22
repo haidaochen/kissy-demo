@@ -23,7 +23,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       'click #J_Debug' : 'debug',
       'mouseenter .J_EditorWrap': 'toggleEditorWrap',
       'mouseleave .J_EditorWrap': 'toggleEditorWrap',
-      'click .J_EditorResize'   : 'editorResize'
+      'click .J_EditorLabel'    : 'editorResize'
     };
     this.iframe = $('#J_PreviewIframe')[0].contentWindow.document;
     this.init();
@@ -235,8 +235,9 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   Code.prototype.editorResize = function(e) {
     var self   = this,
         target = $(e.currentTarget),
-        editor = target.attr('data-editor'),
-        screen = target.attr('data-screen');
+        iconEl = target.one('i'),
+        editor = iconEl.attr('data-editor'),
+        screen = iconEl.attr('data-screen');
 
     var editorEl       = $('#J_' + editor),
         editorWrapEl   = editorEl.parent(),
@@ -247,7 +248,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
 
     if (screen === 'small') {
 
-      target.attr('data-screen', 'full')
+      iconEl.attr('data-screen', 'full')
             .removeClass(fullIconClass)
             .addClass(smallIconClass);
 
@@ -260,7 +261,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
 
     } else {
 
-      target.attr('data-screen', 'small')
+      iconEl.attr('data-screen', 'small')
             .removeClass(smallIconClass)
             .addClass(fullIconClass);
 
