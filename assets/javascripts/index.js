@@ -13,6 +13,6 @@ KISSY.config({
   }
 });
 
-KISSY.use('demo/module', function(S, Module) {
-  new Module();
+KISSY.use('demo/module, demo/api/core, demo/api/components', function(S, Module, APICore, APIComponents) {
+  new Module([].concat(APICore, APIComponents));
 });
