@@ -1729,7 +1729,7 @@ body a:hover {
 /* line 71, ../src/style.sass */
 .head .module {
   padding: 15px 20px;
-  height: 27px;
+  min-height: 27px;
   line-height: 27px;
 }
 /* line 76, ../src/style.sass */
@@ -1764,9 +1764,8 @@ body a:hover {
 }
 /* line 93, ../src/style.sass */
 .head .module-bd {
-  display: inline;
-  float: left;
   padding-left: 20px;
+  overflow: hidden;
 }
 /* line 97, ../src/style.sass */
 .head .module-bd li {
@@ -1783,19 +1782,17 @@ body a:hover {
 .cont, .side {
   display: inline;
   float: right;
-  padding-bottom: 9999px;
-  margin-bottom: -9999px;
 }
 
-/* line 109, ../src/style.sass */
+/* line 107, ../src/style.sass */
 .cont {
   width: 100%;
 }
-/* line 112, ../src/style.sass */
+/* line 110, ../src/style.sass */
 .cont .main {
   margin-left: 220px;
 }
-/* line 115, ../src/style.sass */
+/* line 113, ../src/style.sass */
 .cont .main .main-hd {
   height: 35px;
   margin-bottom: 15px;
@@ -1805,12 +1802,12 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 121, ../src/style.sass */
+/* line 119, ../src/style.sass */
 .cont .main .main-hd h1 {
   font-size: 35px;
   color: white;
 }
-/* line 125, ../src/style.sass */
+/* line 123, ../src/style.sass */
 .cont .main .main-hd .add, .cont .main .main-hd .back {
   display: inline;
   float: right;
@@ -1818,16 +1815,21 @@ body a:hover {
   font-size: 18px;
   color: #84bcde;
 }
-/* line 131, ../src/style.sass */
+/* line 129, ../src/style.sass */
 .cont .main .main-hd .btn {
   margin-right: 10px;
 }
-/* line 134, ../src/style.sass */
+/* line 132, ../src/style.sass */
 .cont .main .main-bd {
-  margin-bottom: 15px;
-  overflow: hidden;
+  *zoom: 1;
 }
-/* line 140, ../src/style.sass */
+/* line 38, ../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.cont .main .main-bd:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* line 137, ../src/style.sass */
 .cont .list li {
   padding: 10px 15px;
   margin-bottom: 15px;
@@ -1839,33 +1841,76 @@ body a:hover {
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 147, ../src/style.sass */
+/* line 144, ../src/style.sass */
 .cont .list li a {
   font-size: 18px;
   font-weight: 700;
 }
-/* line 151, ../src/style.sass */
+/* line 148, ../src/style.sass */
 .cont .code {
   display: none;
 }
-/* line 154, ../src/style.sass */
-.cont .code .column {
-  display: inline;
-  float: left;
+/* line 151, ../src/style.sass */
+.cont .code .main-bd {
+  height: 600px;
+  position: relative;
+  margin: 5px;
 }
 /* line 156, ../src/style.sass */
-.cont .code .column:first-child {
-  margin-right: 15px;
+.cont .code .main-bd .left {
+  left: -5px;
 }
 /* line 159, ../src/style.sass */
-.cont .code .window {
-  margin-bottom: 15px;
+.cont .code .main-bd .right {
+  right: -5px;
+}
+/* line 162, ../src/style.sass */
+.cont .code .main-bd .top {
+  top: -5px;
+}
+/* line 165, ../src/style.sass */
+.cont .code .main-bd .bottom {
+  bottom: -5px;
+}
+/* line 168, ../src/style.sass */
+.cont .code .main-bd .column {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+}
+/* line 173, ../src/style.sass */
+.cont .code .main-bd .editor-wrap {
+  position: absolute;
   width: 100%;
-  height: 300px;
+  height: 50%;
+  background: white;
+  border: 1px solid black;
+}
+/* line 180, ../src/style.sass */
+.cont .code .main-bd .editor-label {
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  display: none;
+  padding: 0 5px;
+  font-size: 12px;
   line-height: 18px;
+  color: #666666;
+  border: 1px solid #dddddd;
   background: white;
 }
-/* line 166, ../src/style.sass */
+/* line 194, ../src/style.sass */
+.cont .code .main-bd .editor-label i {
+  margin-left: 5px;
+}
+/* line 197, ../src/style.sass */
+.cont .code .main-bd .editor {
+  width: 100%;
+  height: 100%;
+}
+/* line 201, ../src/style.sass */
 .cont .btn {
   cursor: pointer;
   display: -moz-inline-stack;
@@ -1887,17 +1932,17 @@ body a:hover {
   background-image: -o-linear-gradient(#ffffff, #e6e6e6);
   background-image: linear-gradient(#ffffff, #e6e6e6);
 }
-/* line 175, ../src/style.sass */
+/* line 210, ../src/style.sass */
 .cont .btn:hover {
   text-decoration: none;
   background: #e6e6e6;
   background-position: 0 -29px;
 }
-/* line 180, ../src/style.sass */
+/* line 215, ../src/style.sass */
 .cont .btn i {
   margin-right: 5px;
 }
-/* line 183, ../src/style.sass */
+/* line 218, ../src/style.sass */
 .cont .disabled {
   cursor: default;
   color: #666666;
@@ -1905,8 +1950,9 @@ body a:hover {
   background-image: none;
 }
 
-/* line 189, ../src/style.sass */
+/* line 224, ../src/style.sass */
 .side {
+  position: fixed;
   margin-right: -200px;
   padding-right: 19px;
   width: 180px;
@@ -1914,8 +1960,9 @@ body a:hover {
   -webkit-box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
+  overflow: auto;
 }
-/* line 195, ../src/style.sass */
+/* line 232, ../src/style.sass */
 .side h2 {
   padding: 5px 0;
   margin-bottom: 15px;
@@ -1927,14 +1974,14 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 205, ../src/style.sass */
+/* line 242, ../src/style.sass */
 .side .method dt, .side .method dd {
   padding: 10px 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 209, ../src/style.sass */
+/* line 246, ../src/style.sass */
 .side .method dt {
   cursor: pointer;
   margin: 10px 0 2px;
@@ -1944,13 +1991,13 @@ body a:hover {
   border-radius: 2px 2px 0 0;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 216, ../src/style.sass */
+/* line 253, ../src/style.sass */
 .side .method dt i {
   display: inline;
   float: right;
   margin-left: 10px;
 }
-/* line 220, ../src/style.sass */
+/* line 257, ../src/style.sass */
 .side .method dd {
   display: none;
   -webkit-border-radius: 0 0 2px 2px;
@@ -1958,35 +2005,67 @@ body a:hover {
   border-radius: 0 0 2px 2px;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 225, ../src/style.sass */
+/* line 262, ../src/style.sass */
 .side .method li {
   height: 23px;
   text-align: right;
   line-height: 23px;
 }
-/* line 230, ../src/style.sass */
+/* line 267, ../src/style.sass */
 .side .method li .current {
   color: #84bcde;
 }
-/* line 233, ../src/style.sass */
+/* line 270, ../src/style.sass */
 .side .config {
   display: none;
 }
-/* line 236, ../src/style.sass */
-.side .config ul {
+/* line 273, ../src/style.sass */
+.side .config dt {
   margin-bottom: 10px;
+}
+/* line 276, ../src/style.sass */
+.side .config dd {
+  margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 240, ../src/style.sass */
-.side .config li {
-  line-height: 30px;
+/* line 280, ../src/style.sass */
+.side .config dd .icon {
+  display: inline;
+  float: left;
+  color: #666666;
+  border-right: 1px solid #cccccc;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  background: #eeeeee;
 }
-/* line 243, ../src/style.sass */
-.side .config .author {
-  width: 160px;
+/* line 287, ../src/style.sass */
+.side .config dd .txt {
+  display: inline;
+  float: left;
+  margin: 0;
+  padding: 3px;
+  width: 150px;
+  border: none;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
 }
-/* line 246, ../src/style.sass */
-.side .config .intro {
-  width: 160px;
-  height: 100px;
+/* line 297, ../src/style.sass */
+.side .config .author .icon {
+  padding: 5px;
+}
+/* line 300, ../src/style.sass */
+.side .config .author input {
+  height: 21px;
+  line-height: 21px;
+}
+/* line 306, ../src/style.sass */
+.side .config .intro .icon {
+  padding: 20px 3px;
+}
+/* line 309, ../src/style.sass */
+.side .config .intro textarea {
+  height: 51px;
+  resize: none;
 }

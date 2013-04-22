@@ -20,9 +20,12 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       'click #J_Back'  : 'goBack',
       'click #J_Commit': 'commit',
       'click #J_Update': 'update',
-      'click #J_Debug' : 'debug'
+      'click #J_Debug' : 'debug',
+      'mouseenter .J_EditorWrap': 'toggleEditorWrap',
+      'mouseleave .J_EditorWrap': 'toggleEditorWrap',
+      'click .J_EditorLabel'    : 'editorResize'
     };
-    this.iframe = $('#J_Result')[0].contentWindow.document;
+    this.iframe = $('#J_PreviewIframe')[0].contentWindow.document;
     this.init();
   };
 
@@ -35,7 +38,6 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
    * 程序初始化
    */
   Code.prototype.init = function() {
-    this.resetColumns();
     this.createEditor();
     Code.superclass.constructor.call(this);
   };
@@ -56,7 +58,7 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
     }
 
     CONFIG.render(demo);
-    self.setEditorVal(demo || {});
+    self.setEditorVal(demo);
   };
 
   /**
@@ -87,26 +89,45 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   };
 
   /**
+   * 调试开关
+   */
+  Code.prototype.debug = function(e) {
+    var self = this,
+        target = $(e.currentTarget),
+        iconEl = target.one('i');
+
+    var checkIconClass = 'icon-check',
+        emptyIconClass = 'icon-check-empty';
+
+    if (self._get('debug')) {
+
+      iconEl.removeClass(checkIconClass)
+            .addClass(emptyIconClass);
+
+      self._set('debug', false);
+
+    } else {
+
+      iconEl.removeClass(emptyIconClass)
+            .addClass(checkIconClass);
+
+      self._set('debug', true);
+
+      // 开启时默认执行一次代码调试
+      self.debugCode();
+    }
+  };
+
+  /**
    * 调试代码
    */
-  Code.prototype.debug = function() {
+  Code.prototype.debugCode = function() {
     var self = this,
         code = self.getDebugCode(self.getEditorVal());
 
       self.iframe.open();
       self.iframe.write(code);
       self.iframe.close();
-  };
-
-  /**
-   * 设置列宽
-   */
-  Code.prototype.resetColumns = function() {
-    var self     = this,
-        contEl   = $('#J_Cont'),
-        columnEl = $('.column', contEl);
-
-    columnEl.width((contEl.width() - 250) / 2);
   };
 
   /**
@@ -124,12 +145,18 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
       var editor = ace.edit(editor[0]);
           editor.setTheme("ace/theme/dreamweaver");
           editor.getSession().setMode("ace/mode/" + mode);
+          editor.on('change', function() {
+            self._get('debug') && self.debugCode();
+          });
       return editor;
     };
 
-    self.htmlEditor = aceEditor($('#J_HtmlWin'), 'html');
-    self.cssEditor  = aceEditor($('#J_CssWin'), 'css');
-    self.jsEditor   = aceEditor($('#J_JsWin'), 'javascript');
+    self.Html = aceEditor($('#J_Html'), 'html');
+    self.Css  = aceEditor($('#J_Css'), 'css');
+    self.Js   = aceEditor($('#J_Js'), 'javascript');
+
+    // 默认开启代码调试
+    self._set('debug', true);
   };
 
   /**
@@ -139,19 +166,27 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
   Code.prototype.setEditorVal = function(demo) {
     var self = this;
 
-    self.htmlEditor.setValue(demo.html);
-    self.htmlEditor.focus();
-    self.htmlEditor.clearSelection();
+    /**
+     * 设置默认值
+     */
+    if (!demo) {
+      var demo = {};
+      demo.html = '<!-- HTML -->\r\n<!-- 所填内容直接添入 BODY 标签 -->\r\n';
+      demo.css  = '/* CSS */\r\n';
+      demo.js   = '/* JavaScript */\r\n/* Kissy 1.3 已默认加载 */\r\n';
+    }
 
-    self.cssEditor.setValue(demo.css);
-    self.cssEditor.focus();
-    self.cssEditor.clearSelection();
+    self.Html.setValue(demo.html);
+    self.Html.focus();
+    self.Html.clearSelection();
 
-    self.jsEditor.setValue(demo.js);
-    self.jsEditor.focus();
-    self.jsEditor.clearSelection();
+    self.Css.setValue(demo.css);
+    self.Css.focus();
+    self.Css.clearSelection();
 
-    self.debug();
+    self.Js.setValue(demo.js);
+    self.Js.focus();
+    self.Js.clearSelection();
   };
 
   /**
@@ -162,9 +197,9 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
     var self = this;
 
     return {
-        html: self.htmlEditor.getValue(),
-        css : self.cssEditor.getValue(),
-        js  : self.jsEditor.getValue()
+        html: self.Html.getValue(),
+        css : self.Css.getValue(),
+        js  : self.Js.getValue()
     };
   };
 
@@ -181,14 +216,17 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
             '<meta charset="utf-8" />\r\n',
             '<title>{{module}}</title>\r\n',
             '<style>\r\n',
-              '{{css}}\r\n',
+              '{{{css}}}\r\n',
             '</style>\r\n',
           '</head>\r\n',
           '<body>\r\n',
             '{{{html}}}\r\n',
           '<script src="http://a.tbcdn.cn/s/kissy/1.3.0/seed-min.js" data-config="{combine:true}"></script>\r\n',
           '<script>\r\n',
-            '{{js}}\r\n',
+            'try {\r\n',
+              '{{{js}}}\r\n',
+            '} catch(e) {\r\n',
+            '}\r\n',
           '</script>\r\n',
       '</body>\r\n',
       '</html>'
@@ -215,6 +253,64 @@ KISSY.add('demo/code', function(S, Base, Config, Node, XTemplate) {
         return S.merge(editor, config);
         break;
     }
+  };
+
+  /**
+   * 标签显示隐藏
+   */
+  Code.prototype.toggleEditorWrap = function(e) {
+    var self    = this,
+        target  = $(e.currentTarget),
+        labelEl = $('.J_EditorLabel', target);
+
+    labelEl.toggle();
+  };
+
+  /**
+   * 编辑器缩放
+   */
+  Code.prototype.editorResize = function(e) {
+    var self   = this,
+        target = $(e.currentTarget),
+        iconEl = target.one('i'),
+        editor = iconEl.attr('data-editor'),
+        screen = iconEl.attr('data-screen');
+
+    var editorEl       = $('#J_' + editor),
+        editorWrapEl   = editorEl.parent(),
+        editorColumnEl = editorWrapEl.parent();
+
+    var fullIconClass  = 'icon-fullscreen',
+        smallIconClass = 'icon-resize-small';
+
+    if (screen === 'small') {
+
+      iconEl.attr('data-screen', 'full')
+            .removeClass(fullIconClass)
+            .addClass(smallIconClass);
+
+      editorColumnEl.css('width', '100%')
+                    .siblings().hide();
+
+      editorWrapEl.css('height', '100%')
+                  .siblings().hide();
+
+
+    } else {
+
+      iconEl.attr('data-screen', 'small')
+            .removeClass(smallIconClass)
+            .addClass(fullIconClass);
+
+      editorColumnEl.css('width', '50%')
+                    .siblings().show();
+
+      editorWrapEl.css('height', '50%')
+                  .siblings().show();
+
+    }
+
+    self[editor] && self[editor].resize();
   };
 
   return Code;
