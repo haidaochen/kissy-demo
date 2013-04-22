@@ -270,16 +270,43 @@ body
   .config
     display: none
 
-    ul
+    dt
       margin-bottom: 10px
+
+    dd
+      margin-bottom: 20px
       overflow: hidden
 
-    li
-      line-height: 30px
+      .icon
+        +float-left
+        color: #666
+        border-right: 1px solid #CCC
+        +border-radius(4px 0 0 4px)
+        background: #EEE
+
+      .txt
+        +float-left
+        margin: 0
+        padding: 3px
+        width: 150px
+        border: none
+        +border-radius(0 4px 4px 0)
 
     .author
-      width: 160px
+
+      .icon
+        padding: 5px
+
+      input
+        height: 21px
+        line-height: 21px
 
     .intro
-      width: 160px
-      height: 100px
+
+      .icon
+        padding: 20px 3px
+
+      textarea
+        height: 51px
+        resize: none
+        

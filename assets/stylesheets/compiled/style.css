@@ -1905,12 +1905,12 @@ body a:hover {
 .cont .code .main-bd .editor-label i {
   margin-left: 5px;
 }
-/* line 198, ../src/style.sass */
+/* line 197, ../src/style.sass */
 .cont .code .main-bd .editor {
   width: 100%;
   height: 100%;
 }
-/* line 202, ../src/style.sass */
+/* line 201, ../src/style.sass */
 .cont .btn {
   cursor: pointer;
   display: -moz-inline-stack;
@@ -1932,17 +1932,17 @@ body a:hover {
   background-image: -o-linear-gradient(#ffffff, #e6e6e6);
   background-image: linear-gradient(#ffffff, #e6e6e6);
 }
-/* line 211, ../src/style.sass */
+/* line 210, ../src/style.sass */
 .cont .btn:hover {
   text-decoration: none;
   background: #e6e6e6;
   background-position: 0 -29px;
 }
-/* line 216, ../src/style.sass */
+/* line 215, ../src/style.sass */
 .cont .btn i {
   margin-right: 5px;
 }
-/* line 219, ../src/style.sass */
+/* line 218, ../src/style.sass */
 .cont .disabled {
   cursor: default;
   color: #666666;
@@ -1950,7 +1950,7 @@ body a:hover {
   background-image: none;
 }
 
-/* line 225, ../src/style.sass */
+/* line 224, ../src/style.sass */
 .side {
   position: fixed;
   margin-right: -200px;
@@ -1962,7 +1962,7 @@ body a:hover {
   box-shadow: rgba(255, 255, 255, 0.07) 1px 0 0;
   overflow: auto;
 }
-/* line 233, ../src/style.sass */
+/* line 232, ../src/style.sass */
 .side h2 {
   padding: 5px 0;
   margin-bottom: 15px;
@@ -1974,14 +1974,14 @@ body a:hover {
   -moz-box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
   box-shadow: rgba(255, 255, 255, 0.07) 0 1px 0;
 }
-/* line 243, ../src/style.sass */
+/* line 242, ../src/style.sass */
 .side .method dt, .side .method dd {
   padding: 10px 5px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px inset;
 }
-/* line 247, ../src/style.sass */
+/* line 246, ../src/style.sass */
 .side .method dt {
   cursor: pointer;
   margin: 10px 0 2px;
@@ -1991,13 +1991,13 @@ body a:hover {
   border-radius: 2px 2px 0 0;
   background: rgba(0, 0, 0, 0.2);
 }
-/* line 254, ../src/style.sass */
+/* line 253, ../src/style.sass */
 .side .method dt i {
   display: inline;
   float: right;
   margin-left: 10px;
 }
-/* line 258, ../src/style.sass */
+/* line 257, ../src/style.sass */
 .side .method dd {
   display: none;
   -webkit-border-radius: 0 0 2px 2px;
@@ -2005,35 +2005,67 @@ body a:hover {
   border-radius: 0 0 2px 2px;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 263, ../src/style.sass */
+/* line 262, ../src/style.sass */
 .side .method li {
   height: 23px;
   text-align: right;
   line-height: 23px;
 }
-/* line 268, ../src/style.sass */
+/* line 267, ../src/style.sass */
 .side .method li .current {
   color: #84bcde;
 }
-/* line 271, ../src/style.sass */
+/* line 270, ../src/style.sass */
 .side .config {
   display: none;
 }
-/* line 274, ../src/style.sass */
-.side .config ul {
+/* line 273, ../src/style.sass */
+.side .config dt {
   margin-bottom: 10px;
+}
+/* line 276, ../src/style.sass */
+.side .config dd {
+  margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 278, ../src/style.sass */
-.side .config li {
-  line-height: 30px;
+/* line 280, ../src/style.sass */
+.side .config dd .icon {
+  display: inline;
+  float: left;
+  color: #666666;
+  border-right: 1px solid #cccccc;
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+  background: #eeeeee;
 }
-/* line 281, ../src/style.sass */
-.side .config .author {
-  width: 160px;
+/* line 287, ../src/style.sass */
+.side .config dd .txt {
+  display: inline;
+  float: left;
+  margin: 0;
+  padding: 3px;
+  width: 150px;
+  border: none;
+  -webkit-border-radius: 0 4px 4px 0;
+  -moz-border-radius: 0 4px 4px 0;
+  border-radius: 0 4px 4px 0;
 }
-/* line 284, ../src/style.sass */
-.side .config .intro {
-  width: 160px;
-  height: 100px;
+/* line 297, ../src/style.sass */
+.side .config .author .icon {
+  padding: 5px;
+}
+/* line 300, ../src/style.sass */
+.side .config .author input {
+  height: 21px;
+  line-height: 21px;
+}
+/* line 306, ../src/style.sass */
+.side .config .intro .icon {
+  padding: 20px 3px;
+}
+/* line 309, ../src/style.sass */
+.side .config .intro textarea {
+  height: 51px;
+  resize: none;
 }
