@@ -4,15 +4,15 @@
  * @version 1.0
  */
 
-KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
+KISSY.add('demo/module', function(S, /*APICore, APIComponents,*/ Base, Method, Node, XTemplate) {
 
   var $      = S.all,
-      METHOD = new Method();
+      METHOD;
 
   /**
    * Module
    */
-  var Module = function() {
+  var Module = function(api) {
     this.el     = $('#J_Module');
     this.elHd   = $('#J_ModuleHd');
     this.elBd   = $('#J_ModuleBd');
@@ -20,6 +20,8 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
       'click #J_ModuleHd a': 'renderModule',
       'click #J_ModuleBd a': 'renderMethod'
     };
+    this.api = api;
+    METHOD = new Method(api);
     this.init();
   };
 
@@ -56,7 +58,7 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
       '</ul>'
     ].join('');
 
-    var buffer = new XTemplate(tpl).render({api: API});
+    var buffer = new XTemplate(tpl).render({api: self.api});
 
     self.elHd.html(buffer);
   };
@@ -67,7 +69,8 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
   Module.prototype.renderModule = function(e) {
     var self   = this,
         target = $(e.currentTarget),
-        index  = target.attr('data-index');
+        index  = target.attr('data-index'),
+        API = self.api;
 
     self.elHd.all('a').removeClass('current');
     target.addClass('current');
@@ -113,6 +116,6 @@ KISSY.add('demo/module', function(S, API, Base, Method, Node, XTemplate) {
 
 }, {
 
-  requires: ['demo/api', 'demo/base', 'demo/method', 'node', 'xtemplate']
+  requires: [/*'demo/api/core','demo/api/components',*/ 'demo/base', 'demo/method', 'node', 'xtemplate']
 
 });
