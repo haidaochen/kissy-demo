@@ -238,7 +238,8 @@ KISSY.add('demo/api/core',function(S){
                             "name":"type()",
                             "desc":""
                         }]
-                    },{
+                    },
+                    {
                         "name":"lang",
                         "entries":[{
                             "name":"equals()",
@@ -284,75 +285,74 @@ KISSY.add('demo/api/core',function(S){
                             "desc":"返回全局唯一 id",
                             "slug":"http://docs.kissyui.com/docs/html/api/seed/kissy/guid.html"
                         }]
-                    }
-                ]
+                    }]
             },
             {
                 "name":"ajax",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html",
                 "subcats":[{
-                        "name":"类",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/#module",
-                        "entries":[{
-                            "name":"IO",
-                            "desc":"",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/#module-io"
-                        }]
-                    },{
-                        "name":"方法",
-                        "entries":[{
-                            "name":"setupConfig()",
-                            "desc":"为所有的 ajax 请求设定默认配置",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/setupConfig.html"
-                        },{
-                            "name":"get()",
-                            "desc":"发送 http get 请求",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/get.html"
-                        },{
-                            "name":"post()",
-                            "desc":"发送 http post 请求",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/post.html"
-                        },{
-                            "name":"getJSON()",
-                            "decs":"发送 http get 请求，无视请求响应的 Content-type，将返回信息解析为 json 作为第一个参数调用 callback 回调.",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/getJSON.html"
-                        },{
-                            "name":"jsonp()",
-                            "desc":"发送 jsonp 请求",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/jsonp.html"
-                        },{
-                            "name":"upload()",
-                            "desc":"",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/upload.html"
-                        },{
-                            "name":"serialize()",
-                            "desc":"序列化一系列表单元素为可提交的字符串",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/serialize.html"
-                        }]
-                    },{
-                        "name":"事件",
-                        "entries":[{
-                            "name":"start()",
-                            "desc":"当配置初始化后，获取传输对象前触发",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.start"
-                        },{
-                            "name":"send()",
-                            "desc":"请求发送前触发",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.send"
-                        },{
-                            "name":"success()",
-                            "desc":"服务器返回成功后触发",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.success"
-                        },{
-                            "name":"error()",
-                            "desc":"服务器返回失败后触发",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.error"
-                        },{
-                            "name":"complete()",
-                            "desc":"服务器返回（无论成功或失败）后触发",
-                            "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.complete"
-                        }]
+                    "name":"类",
+                    "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/#module",
+                    "entries":[{
+                        "name":"IO",
+                        "desc":"",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/#module-io"
                     }]
+                },{
+                    "name":"方法",
+                    "entries":[{
+                        "name":"setupConfig()",
+                        "desc":"为所有的 ajax 请求设定默认配置",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/setupConfig.html"
+                    },{
+                        "name":"get()",
+                        "desc":"发送 http get 请求",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/get.html"
+                    },{
+                        "name":"post()",
+                        "desc":"发送 http post 请求",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/post.html"
+                    },{
+                        "name":"getJSON()",
+                        "decs":"发送 http get 请求，无视请求响应的 Content-type，将返回信息解析为 json 作为第一个参数调用 callback 回调.",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/getJSON.html"
+                    },{
+                        "name":"jsonp()",
+                        "desc":"发送 jsonp 请求",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/jsonp.html"
+                    },{
+                        "name":"upload()",
+                        "desc":"",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/upload.html"
+                    },{
+                        "name":"serialize()",
+                        "desc":"序列化一系列表单元素为可提交的字符串",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/serialize.html"
+                    }]
+                },{
+                    "name":"事件",
+                    "entries":[{
+                        "name":"start()",
+                        "desc":"当配置初始化后，获取传输对象前触发",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.start"
+                    },{
+                        "name":"send()",
+                        "desc":"请求发送前触发",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.send"
+                    },{
+                        "name":"success()",
+                        "desc":"服务器返回成功后触发",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.success"
+                    },{
+                        "name":"error()",
+                        "desc":"服务器返回失败后触发",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.error"
+                    },{
+                        "name":"complete()",
+                        "desc":"服务器返回（无论成功或失败）后触发",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html#io.io.Events.complete"
+                    }]
+                }]
             },
             {
                 "name":"anim",
@@ -384,30 +384,32 @@ KISSY.add('demo/api/core',function(S){
                         "desc":"继续当前动画实例的动画",
                         "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.prototype.resume"
                     }]
-                },{
-                    "name":"静态方法",
-                    "entries":[{
-                        "name":"Anim.isRunning()",
-                        "desc":"用于判断 elem 上是否有动画对象在执行",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.isRunning"
-                    },{
-                        "name":"Anim.isPaused()",
-                        "desc":" 用于判断 elem 上是否有动画对象在暂停",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.isPaused"
-                    },{
-                        "name":"Anim.stop()",
-                        "desc":"停止某元素上的动画",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.stop"
-                    },{
-                        "name":"Anim.pause()",
-                        "desc":"暂停某元素上的动画",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.pause"
-                    },{
-                        "name":"Anim.resume()",
-                        "desc":"继续某元素上的动画",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.resume"
-                    }]
-                },{
+                },
+//                {
+//                    "name":"静态方法",
+//                    "entries":[{
+//                        "name":"Anim.isRunning()",
+//                        "desc":"用于判断 elem 上是否有动画对象在执行",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.isRunning"
+//                    },{
+//                        "name":"Anim.isPaused()",
+//                        "desc":" 用于判断 elem 上是否有动画对象在暂停",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.isPaused"
+//                    },{
+//                        "name":"Anim.stop()",
+//                        "desc":"停止某元素上的动画",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.stop"
+//                    },{
+//                        "name":"Anim.pause()",
+//                        "desc":"暂停某元素上的动画",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.pause"
+//                    },{
+//                        "name":"Anim.resume()",
+//                        "desc":"继续某元素上的动画",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html#anim.Anim.resume"
+//                    }]
+//                },
+                {
                     "name":"事件",
                     "entries":[{
                         "name":"complete()",
@@ -420,35 +422,93 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"base",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/base/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Attribute",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html",
-                    "desc":""
+                    "subcats":[{
+                        "name":"方法",
+                        "entries":[{
+                            "name":"addAttr()",
+                            "desc":"给宿主对象增加一个属性",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.addAttr"
+                        },{
+                            "name":"addAttrs()",
+                            "desc":"批量添加属性",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.addAttrs"
+                        },{
+                            "name":"hasAttr()",
+                            "desc":"判断是否有名为 name 的属性",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.hasAttr"
+                        },{
+                            "name":"removeAttr()",
+                            "desc":"删除名为 name 的属性",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.removeAttr"
+                        },{
+                            "name":"get()",
+                            "desc":"获取属性 name 的值",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.get"
+                        },{
+                            "name":"getAttrVals()",
+                            "desc":"获取目前实例的所有属性键值对集合",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.getAttrVals"
+                        },{
+                            "name":"set()",
+                            "desc":"设置属性 name 的值为 value",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.set"
+                        },{
+                            "name":"reset()",
+                            "desc":"重置属性 name 为初始值",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.prototype.reset"
+                        }]
+                    },{
+                        "name":"事件",
+                        "entries":[{
+                            "name":"beforeAttrNameChange()",
+                            "desc":"名为attrName的属性, 在改变它的值之前触发该事件",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.Events.beforeAttrNameChange"
+                        },{
+                            "name":"afterAttrNameChange()",
+                            "desc":"名为attrName的属性, 在改变它的值之后触发该事件",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#base.Attribute.Events.afterAttrNameChange"
+                        },{
+                            "name":"Change()",
+                            "desc":"每调用 set() 一次后就触发一次该事件",
+                            "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html#Attribute.Events.*Change"
+                        }]
+                    }]
                 },{
                     "name":"Base",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/base/base.html",
-                    "desc":""
+                    "entries":[{
+                        "name":"Base()",
+                        "desc":"如果你想让类默认就支持 attribute 功能, 请直接继承 Base",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/base/base.html"
+                    }]
                 }]
             },
             {
                 "name":"cookie",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html",
-                "entries":[{
-                    "name":"get()",
-                    "desc":"获取cookie值",
-                    "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
-                },{
-                    "name":"remove()",
-                    "desc":"置空cookie值，并立刻过期",
-                    "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
-                },{
-                    "name":"set()",
-                    "desc":"设置cookie值",
-                    "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
+                "subcats":[{
+                    "name":"方法",
+                    "entries":[{
+                        "name":"get()",
+                        "desc":"获取cookie值",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
+                    },{
+                        "name":"remove(设)",
+                        "desc":"置空cookie值，并立刻过期",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
+                    },{
+                        "name":"set()",
+                        "desc":"置cookie值",
+                        "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
+                    }]
                 }]
             },
             {
                 "name":"dom",
+                "slug":"http://docs.kissyui.com/docs/html/api/core/dom/index.html",
                 "entries":[{
                     "name":"selector",
                     "desc":"选择器",
@@ -738,9 +798,9 @@ KISSY.add('demo/api/core',function(S){
             },
             {
                 "name":"event",
-                "entries":[],
+                "slug":"http://docs.kissyui.com/docs/html/api/core/event/index.html",
                 "subcats":[{
-                    "name":"方法",
+                    "name":"Methods",
                     "entries":[{
                         "name":"on()",
                         "desc":"为符合匹配的 dom 节点的相应事件添加事件处理器",
@@ -783,7 +843,7 @@ KISSY.add('demo/api/core',function(S){
                         "slug":"http://docs.kissyui.com/docs/html/api/core/event/event-object.html"
                     }]
                 },{
-                    "name":"DOM特殊事件",
+                    "name":"DOM节点的特殊事件",
                     "entries":[{
                         "name":"focusin",
                         "desc":"",
@@ -814,7 +874,7 @@ KISSY.add('demo/api/core',function(S){
                         "slug":"http://docs.kissyui.com/docs/html/api/core/event/mousewheel.html"
                     }]
                 },{
-                    "name":"移动设备特殊事件",
+                    "name":"移动设备的特殊事件",
                     "entries":[{
                         "name":"doubleTap",
                         "desc":"触屏上的双击事件",
@@ -868,6 +928,7 @@ KISSY.add('demo/api/core',function(S){
             },
             {
                 "name":"json",
+                "slug":"http://docs.kissyui.com/docs/html/api/core/json/index.html",
                 "entries":[{
                     "name":"parse()",
                     "desc":"将字符串解析为json对象，解析器",
@@ -876,24 +937,25 @@ KISSY.add('demo/api/core',function(S){
                     "name":"stringify()",
                     "desc":"将json对象或者数组转化为字符串，序列化器",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/json/index.html"
-                }],
-                "subcats":[]
+                }]
             },
             {
                 "name":"node",
-                "entries":[],
-                "subcats":[{
-                    "name":"静态方法",
-                    "entries":[{
-                        "name":"all()",
-                        "desc":"根据选择器字符串得到节点列表",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/node/all.html"
-                    },{
-                        "name":"one()",
-                        "desc":"如果参数为选择字符串, 找不到则返回 null, 其他情况下等同于 NodeList.all( args... ).item(0)",
-                        "slug":"http://docs.kissyui.com/docs/html/api/core/node/one.html"
-                    }]
-                },{
+                "slug":"http://docs.kissyui.com/docs/html/api/core/node/index.html",
+                "subcats":[
+//                    {
+//                    "name":"静态方法",
+//                    "entries":[{
+//                        "name":"all()",
+//                        "desc":"根据选择器字符串得到节点列表",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/node/all.html"
+//                    },{
+//                        "name":"one()",
+//                        "desc":"如果参数为选择字符串, 找不到则返回 null, 其他情况下等同于 NodeList.all( args... ).item(0)",
+//                        "slug":"http://docs.kissyui.com/docs/html/api/core/node/one.html"
+//                    }]
+//                },
+                    {
                     "name":"获取节点",
                     "entries":[{
                         "name":"all()",
@@ -1057,6 +1119,7 @@ KISSY.add('demo/api/core',function(S){
             },
             {
                 "name":"ua",
+                "slug":"http://docs.kissyui.com/docs/html/api/core/ua/index.html",
                 "entries":[{
                     "name":"trident",
                     "desc":"trident的版本号",
