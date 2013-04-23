@@ -1,7 +1,7 @@
 KISSY.add('demo/api/components',function(S){
 
     return     {
-        "anme":"componets",
+        "name":"components",
         "desc":"扩展模块集",
         "subcats":[
             {
@@ -108,15 +108,15 @@ KISSY.add('demo/api/components',function(S){
                     "desc":"为 Draggable 对象提供所需要的代理节点",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/droppable-delegate.html"
                 },{
-                    "name":"dd.plugin.Proxy",
+                    "name":"plugin.Proxy",
                     "desc":"Draggable 插件， 可代理拖放对象.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/plugin/proxy.html#dd-plugin-proxy"
                 },{
-                    "name":"dd.plugin.Scroll",
+                    "name":"plugin.Scroll",
                     "desc":"Scroll 插件",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/plugin/scroll.html"
                 },{
-                    "name":"dd.plugin.Constrain",
+                    "name":"plugin.Constrain",
                     "desc":"Draggable 插件，限制拖放对象在某个区域内",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/plugin/constrain.html"
                 }]
@@ -140,19 +140,19 @@ KISSY.add('demo/api/components',function(S){
                     "desc":"菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/Menu.html"
                 },{
-                    "name":"Menu.Item",
+                    "name":"Item",
                     "desc":"菜单项.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/MenuItem.html"
                 },{
-                    "name":"Menu.SubMenu",
+                    "name":"SubMenu",
                     "desc":"包含子菜单的菜单项.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/SubMenu.html"
                 },{
-                    "name":"Menu.PopupMenu",
+                    "name":"PopupMenu",
                     "desc":"悬浮菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/PopupMenu.html"
                 },{
-                    "name":"Menu.FilterMenu",
+                    "name":"FilterMenu",
                     "desc":"可过滤菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/FilterMenu.html"
                 }]
@@ -180,19 +180,19 @@ KISSY.add('demo/api/components',function(S){
                 "desc":"",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/index.html",
                 "entries":[{
-                    "name":"mvc.Model",
+                    "name":"Model",
                     "desc":"模型类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/Model.html"
                 },{
-                    "name":"mvc.Collection",
+                    "name":"Collection",
                     "desc":"集合类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/Collection.html"
                 },{
-                    "name":"mvc.View",
+                    "name":"View",
                     "desc":"视图类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/View.html"
                 },{
-                    "name":"mvc.Router",
+                    "name":"Router",
                     "desc":"路由类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/Router.html"
                 }]
