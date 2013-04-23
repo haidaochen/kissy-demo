@@ -496,8 +496,8 @@ KISSY.add('demo/api/core',function(S){
                         "desc":"获取cookie值",
                         "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
                     },{
-                        "name":"remove(设)",
-                        "desc":"置空cookie值，并立刻过期",
+                        "name":"remove()",
+                        "desc":"设置空cookie值，并立刻过期",
                         "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html"
                     },{
                         "name":"set()",
