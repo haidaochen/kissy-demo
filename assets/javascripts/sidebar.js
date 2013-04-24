@@ -130,7 +130,7 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
 
         if (moduleName !== name) {
 
-          moduleEl && moduleEl.siblings().slideUp(0.2);
+          moduleEl && moduleEl.siblings().slideUp(0.2) && self.toggleIcon(moduleEl, false);
           subcatEl && subcatEl.siblings().slideUp(0.2);
           entrieEl && entrieEl.removeClass('current');
 
@@ -142,9 +142,9 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
           self._set('entrieEl', null);
 
           target.siblings().slideUp(0.2);
-
         }
-          
+
+        self.toggleIcon(target);
         target.siblings().slideToggle(0.2);
         break;
 
@@ -181,6 +181,26 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
     LIST.render();
 
   };
+
+  /**
+   * 图标切换
+   * @param {Object}  el
+   * @param {Boolean} state
+   */
+  Sidebar.prototype.toggleIcon = function(el, state) {
+    var iconEl         = el.one('i'),
+        rightIconClass = 'icon-caret-right',
+        downIconClass  = 'icon-caret-down';
+
+    if (iconEl.hasClass(rightIconClass) || state) {
+      iconEl.addClass(downIconClass)
+            .removeClass(rightIconClass);
+    } else {
+      iconEl.addClass(rightIconClass)
+            .removeClass(downIconClass);
+    }
+  };
+
 
   return Sidebar;
 
