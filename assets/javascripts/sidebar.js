@@ -192,7 +192,9 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
         rightIconClass = 'icon-caret-right',
         downIconClass  = 'icon-caret-down';
 
-    if (iconEl.hasClass(rightIconClass) || state) {
+    state === undefined ? state = true : '';
+
+    if (iconEl.hasClass(rightIconClass) && state) {
       iconEl.addClass(downIconClass)
             .removeClass(rightIconClass);
     } else {
