@@ -425,7 +425,7 @@ KISSY.add('demo/api/core',function(S){
                 "subcats":[{
                     "name":"Attribute",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html",
-                    "subcats":[{
+                    "subprops":[{
                         "name":"方法",
                         "entries":[{
                             "name":"addAttr()",
