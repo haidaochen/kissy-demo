@@ -52,7 +52,7 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
           '{{#subcats}}',
             '<li class="module">',
                 '<p class="J_Module module-name" data-name="{{name}}" data-type="module"><i class="icon-caret-right"></i>{{name}}</span>',
-                '{{@if entries}}',
+                '{{#hasEntries}}',
                   '<ul class="entries">',
                     '{{#entries}}',
                       '<li class="J_Entrie entrie" data-name="{{name}}" data-type="entrie">',
@@ -61,7 +61,8 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
                       '</li>',
                     '{{/entries}}',
                   '</ul>',
-                '{{else}}',
+                '{{/hasSubcats}}',
+                '{{#hasSubcats}}',
                   '<ul class="subcats">',
                     '{{#subcats}}',
                       '<li class="subcat">',
@@ -77,12 +78,18 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
                       '</li>',
                     '{{/subcats}}',
                   '</ul>',
-                '{{/if}}',
+                '{{/hasSubcats}}',
             '</li>',
           '{{/subcats}}',
         '</ul>',
       '{{/api}}'
     ];
+
+    // 添加标识
+    S.each(api.subcats, function(module) {
+      module.entries ? module.hasEntries = true : '';
+      module.subcats ? module.hasSubcats = true : '';
+    });
 
     buffer = new XTemplate(tpl.join('')).render({api: api});
     self.elBd.html(buffer);
@@ -116,22 +123,57 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
     switch (type) {
 
       case 'module':
-        target.next().slideToggle(0.2);
-        self._set('module', name);
-        self._set('subcat', null);
-        self._set('entrie', null);
+        var moduleName = self._get('module'),
+            moduleEl   = self._get('moduleEl'),
+            subcatEl   = self._get('subcatEl'),
+            entrieEl   = self._get('entrieEl');
+
+        if (moduleName !== name) {
+
+          moduleEl && moduleEl.siblings().slideUp(0.2);
+          subcatEl && subcatEl.siblings().slideUp(0.2);
+          entrieEl && entrieEl.removeClass('current');
+
+          self._set('module', name);
+          self._set('subcat', null);
+          self._set('entrie', null);
+          self._set('moduleEl', target);
+          self._set('subcatEl', null);
+          self._set('entrieEl', null);
+
+          target.siblings().slideUp(0.2);
+
+        }
+          
+        target.siblings().slideToggle(0.2);
         break;
 
       case 'subcat':
-        target.next().slideToggle(0.2);
-        self._set('subcat', name);
-        self._set('entrie', null);
+        var subcatName = self._get('subcat'),
+            subcatEl   = self._get('subcatEl'),
+            entrieEl   = self._get('entrieEl');
+
+        if (subcatName !== name) {
+
+          subcatEl && subcatEl.siblings().slideUp(0.2);
+          entrieEl && entrieEl.removeClass('current');
+
+          self._set('subcat', name);
+          self._set('entrie', null);
+          self._set('subcatEl', target);
+          self._set('entrieEl', null);
+
+        }
+
+        target.siblings().slideToggle(0.2);
         break;
 
       case 'entrie':
         $('.J_Entrie', self.elBd).removeClass('current');
         target.addClass('current');
+
         self._set('entrie', name);
+        self._set('entrieEl', target);
         break;
 
     }
