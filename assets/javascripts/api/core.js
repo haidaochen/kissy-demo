@@ -3,7 +3,7 @@ KISSY.add('demo/api/core',function(S){
 	return     {
         "anme":"core",
         "desc":"核心模块集",
-        "subcats":[
+        "subcls":[
             {
                 "name":"loader",
                 "slug":"http://docs.kissyui.com/docs/html/api/seed/loader/index.html",
@@ -28,7 +28,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"lang",
                 "slug":"http://docs.kissyui.com/docs/html/api/seed/kissy/index.html",
-                "subprops":[{
+                "subcat":[{
                     "name":"array",
                     "entries":[{
                         "name":"each()",
@@ -290,7 +290,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"ajax",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html",
-                "subprops":[{
+                "subcat":[{
                     "name":"类",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/#module",
                     "entries":[{
@@ -357,7 +357,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"anim",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html",
-                "subprops":[{
+                "subcat":[{
                     "name":"方法",
                     "entries":[{
                         "name":"isRunning()",
@@ -422,10 +422,10 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"base",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/base/index.html",
-                "subcats":[{
+                "subcls":[{
                     "name":"Attribute",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/base/attribute.html",
-                    "subprops":[{
+                    "subcat":[{
                         "name":"方法",
                         "entries":[{
                             "name":"addAttr()",
@@ -489,7 +489,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"cookie",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html",
-                "subprops":[{
+                "subcat":[{
                     "name":"方法",
                     "entries":[{
                         "name":"get()",
@@ -514,7 +514,7 @@ KISSY.add('demo/api/core',function(S){
                     "desc":"选择器",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/dom/selector.html"
                 }],
-                "subprops":[{
+                "subcat":[{
                     "name":"节点获取过滤",
                     "slug":"",
                     "entries":[{
@@ -799,7 +799,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"event",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/event/index.html",
-                "subprops":[{
+                "subcat":[{
                     "name":"Methods",
                     "entries":[{
                         "name":"on()",
@@ -942,7 +942,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"node",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/node/index.html",
-                "subprops":[
+                "subcat":[
 //                    {
 //                    "name":"静态方法",
 //                    "entries":[{
