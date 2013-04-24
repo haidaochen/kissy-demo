@@ -49,9 +49,10 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
     tpl = [
       '{{#api}}',
         '<ul class="modules">',
-          '{{#subcats}}',
+          '{{#subcls}}',
             '<li class="module">',
                 '<p class="J_Module module-name" data-name="{{name}}" data-type="module"><i class="icon-caret-right"></i>{{name}}</span>',
+                
                 '{{#hasEntries}}',
                   '<ul class="entries">',
                     '{{#entries}}',
@@ -61,10 +62,11 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
                       '</li>',
                     '{{/entries}}',
                   '</ul>',
-                '{{/hasSubcats}}',
-                '{{#hasSubcats}}',
+                '{{/hasEntries}}',
+
+                '{{#hasSubcat}}',
                   '<ul class="subcats">',
-                    '{{#subcats}}',
+                    '{{#subcat}}',
                       '<li class="subcat">',
                         '<p class="J_Subcat subcat-name" data-name="{{name}}" data-type="subcat">{{name}}</p>',
                         '<ul class="entries">',
@@ -76,19 +78,31 @@ KISSY.add('demo/sidebar', function(S, Base, List, Node, XTemplate) {
                           '{{/entries}}',
                         '</ul>',
                       '</li>',
-                    '{{/subcats}}',
+                    '{{/subcat}}',
                   '</ul>',
-                '{{/hasSubcats}}',
+                '{{/hasSubcat}}',
+
+                '{{#hasSubcls}}',
+                  '<ul class="entries">',
+                    '{{#subcls}}',
+                      '<li class="J_Entrie entrie" data-name="{{name}}" data-type="entrie">',
+                        '<p class="entrie-name">{{name}}</p>',
+                        '<p class="entrie-desc">{{desc}}</p>',
+                      '</li>',
+                    '{{/subcls}}',
+                  '</ul>',
+                '{{/hasSubcls}}',
             '</li>',
-          '{{/subcats}}',
+          '{{/subcls}}',
         '</ul>',
       '{{/api}}'
     ];
 
     // 添加标识
-    S.each(api.subcats, function(module) {
+    S.each(api.subcls, function(module) {
+      module.subcat  ? module.hasSubcat  = true : '';
+      module.subcls  ? module.hasSubcls  = true : '';
       module.entries ? module.hasEntries = true : '';
-      module.subcats ? module.hasSubcats = true : '';
     });
 
     buffer = new XTemplate(tpl.join('')).render({api: api});
