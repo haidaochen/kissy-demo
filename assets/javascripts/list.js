@@ -91,6 +91,6 @@ KISSY.add('demo/list', function(S, Base, Code, Node, IO, XTemplate) {
 
 }, {
 
-  requires: ['demo/base', 'demo/code', 'node', 'ajax', 'xtemplate', 'sizzle']
+  requires: ['demo/base', 'demo/code', 'node', 'ajax', 'xtemplate']
 
 });

@@ -9,10 +9,6 @@
     <div class="wrap">
       <header class="head">
         <div id="J_Tips" class="tips"></div>
-        <nav id="J_Module" class="module">
-          <div id="J_ModuleHd" class="module-hd"></div>
-          <div id="J_ModuleBd" class="module-bd"></div>
-        </nav>
       </header>
       <div id="J_Cont" class="cont">
 
@@ -65,12 +61,15 @@
       </div>
       <aside id="J_Side" class="side">
         
-        <!--S method -->
-        <nav id="J_Method" class="method">
-          <h2 id="J_MethodHd"></h2>
-          <div id="J_MethodBd"></div>
+        <!--S sidebar -->
+        <nav id="J_Sidebar" class="sidebar">
+          <div id="J_SidebarHd" class="sidebar-hd">
+              <a href="javascript:;" title="核心模块集" data-api-mod="demo/api/core">core</a>
+              <a href="javascript:;" title="扩展模块集" data-api-mod="demo/api/components">components</a>
+          </div>
+          <div id="J_SidebarBd" class="sidebar-bd"></div>
         </nav>
-        <!--E method -->
+        <!--E sidebar -->
         
         <!--S config -->
         <div id="J_Config" class="config"></div>
