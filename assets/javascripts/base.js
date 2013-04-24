@@ -8,13 +8,13 @@ KISSY.add('demo/base', function(S, Node, IO) {
 
   var $ = S.all;
 
-  var TIPS_T    = null,
-      TIPS_EL   = $('#J_Tips'),
-      LIST_EL   = $('#J_List'),
-      CODE_EL   = $('#J_Code'),
-      METHOD_EL = $('#J_Method'),
-      CONFIG_EL = $('#J_Config');
-
+  var TIPS_T     = null,
+      TIPS_EL    = $('#J_Tips'),
+      LIST_EL    = $('#J_List'),
+      CODE_EL    = $('#J_Code'),
+      SIDEBAR_EL = $('#J_Sidebar'),
+      CONFIG_EL  = $('#J_Config');
+      
   /**
    * Base
    */
@@ -143,13 +143,13 @@ KISSY.add('demo/base', function(S, Node, IO) {
       case 'list':
         LIST_EL.show();
         CODE_EL.hide();
-        METHOD_EL.show();
+        SIDEBAR_EL.show();
         CONFIG_EL.hide();
         break;
       case 'code':
         LIST_EL.hide();
         CODE_EL.show();
-        METHOD_EL.hide();
+        SIDEBAR_EL.hide();
         CONFIG_EL.show();
         break;
     }
@@ -160,7 +160,15 @@ KISSY.add('demo/base', function(S, Node, IO) {
    * @return {String}
    */
   Base.prototype._makeQueryId = function() {
-    return this._get('module') + '.' + this._get('method');
+    var self  = this,
+        types = ['module', 'entrie'],
+        temp  = [];
+
+    S.each(types, function(type) {
+      self._get(type) && temp.push(self._get(type))
+    });
+
+    return temp.join('.');
   };
 
   return Base;

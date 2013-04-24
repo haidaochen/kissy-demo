@@ -14,9 +14,9 @@ KISSY.config({
 });
 
 
-KISSY.add('demo/index', function(S, Base, Module, APICore, APIComponents) {
-  var $      = S.all,
-      MODULE = new Module([].concat(APICore, APIComponents));
+KISSY.add('demo/index', function(S, Base, Sidebar) {
+  var $       = S.all,
+      sidebar = new Sidebar();
 
   /**
    * Index
@@ -48,8 +48,8 @@ KISSY.add('demo/index', function(S, Base, Module, APICore, APIComponents) {
     var self = this,
         winH = $(window).height();
 
-    self.sideEl.css('height', winH - 120);
-    self.codeBdEl.css('height', winH - 181);
+    self.sideEl.css('height', winH - 40);
+    self.codeBdEl.css('height', winH - 101);
   };
 
   /**
@@ -68,7 +68,7 @@ KISSY.add('demo/index', function(S, Base, Module, APICore, APIComponents) {
 
 }, {
 
-  requires: ['demo/base', 'demo/module', 'demo/api/core', 'demo/api/components']
+  requires: ['demo/base', 'demo/sidebar', 'sizzle']
 
 });
 
