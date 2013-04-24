@@ -28,7 +28,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"lang",
                 "slug":"http://docs.kissyui.com/docs/html/api/seed/kissy/index.html",
-                "subcats":[{
+                "subprops":[{
                     "name":"array",
                     "entries":[{
                         "name":"each()",
@@ -290,7 +290,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"ajax",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/index.html",
-                "subcats":[{
+                "subprops":[{
                     "name":"类",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/ajax/#module",
                     "entries":[{
@@ -357,7 +357,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"anim",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/anim/index.html",
-                "subcats":[{
+                "subprops":[{
                     "name":"方法",
                     "entries":[{
                         "name":"isRunning()",
@@ -489,7 +489,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"cookie",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/cookie/index.html",
-                "subcats":[{
+                "subprops":[{
                     "name":"方法",
                     "entries":[{
                         "name":"get()",
@@ -514,7 +514,7 @@ KISSY.add('demo/api/core',function(S){
                     "desc":"选择器",
                     "slug":"http://docs.kissyui.com/docs/html/api/core/dom/selector.html"
                 }],
-                "subcats":[{
+                "subprops":[{
                     "name":"节点获取过滤",
                     "slug":"",
                     "entries":[{
@@ -799,7 +799,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"event",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/event/index.html",
-                "subcats":[{
+                "subprops":[{
                     "name":"Methods",
                     "entries":[{
                         "name":"on()",
@@ -942,7 +942,7 @@ KISSY.add('demo/api/core',function(S){
             {
                 "name":"node",
                 "slug":"http://docs.kissyui.com/docs/html/api/core/node/index.html",
-                "subcats":[
+                "subprops":[
 //                    {
 //                    "name":"静态方法",
 //                    "entries":[{

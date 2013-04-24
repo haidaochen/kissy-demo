@@ -1,7 +1,7 @@
 KISSY.add('demo/api/components',function(S){
 
     return     {
-        "anme":"componets",
+        "name":"components",
         "desc":"扩展模块集",
         "subcats":[
             {
@@ -22,7 +22,7 @@ KISSY.add('demo/api/components',function(S){
                 "name":"ComboBox",
                 "desc":"",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/combobox/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"ComboBox",
                     "desc":"复合输入框",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/combobox/combobox.html"
@@ -48,7 +48,7 @@ KISSY.add('demo/api/components',function(S){
                 "name":"Component",
                 "desc":"",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/component/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Controller",
                     "desc":"组件基类",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/component/controller.html"
@@ -87,7 +87,7 @@ KISSY.add('demo/api/components',function(S){
                 "name":"DD",
                 "desc":"拖放功能",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/dd/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Draggable",
                     "desc":"拖拽功能",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/draggable.html"
@@ -108,15 +108,15 @@ KISSY.add('demo/api/components',function(S){
                     "desc":"为 Draggable 对象提供所需要的代理节点",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/droppable-delegate.html"
                 },{
-                    "name":"dd.plugin.Proxy",
+                    "name":"plugin.Proxy",
                     "desc":"Draggable 插件， 可代理拖放对象.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/plugin/proxy.html#dd-plugin-proxy"
                 },{
-                    "name":"dd.plugin.Scroll",
+                    "name":"plugin.Scroll",
                     "desc":"Scroll 插件",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/plugin/scroll.html"
                 },{
-                    "name":"dd.plugin.Constrain",
+                    "name":"plugin.Constrain",
                     "desc":"Draggable 插件，限制拖放对象在某个区域内",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/dd/plugin/constrain.html"
                 }]
@@ -135,24 +135,24 @@ KISSY.add('demo/api/components',function(S){
                 "name":"Menu",
                 "desc":"",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/menu/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Menu",
                     "desc":"菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/Menu.html"
                 },{
-                    "name":"Menu.Item",
+                    "name":"Item",
                     "desc":"菜单项.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/MenuItem.html"
                 },{
-                    "name":"Menu.SubMenu",
+                    "name":"SubMenu",
                     "desc":"包含子菜单的菜单项.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/SubMenu.html"
                 },{
-                    "name":"Menu.PopupMenu",
+                    "name":"PopupMenu",
                     "desc":"悬浮菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/PopupMenu.html"
                 },{
-                    "name":"Menu.FilterMenu",
+                    "name":"FilterMenu",
                     "desc":"可过滤菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menu/FilterMenu.html"
                 }]
@@ -161,7 +161,7 @@ KISSY.add('demo/api/components',function(S){
                 "name":"MenuButton",
                 "desc":"",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/menubutton/index.html#menubutton",
-                "entries":[{
+                "subcats":[{
                     "name":"MenuButton",
                     "desc":"菜单.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/menubutton/MenuButton.html"
@@ -179,20 +179,20 @@ KISSY.add('demo/api/components',function(S){
                 "name":"mvc",
                 "desc":"",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/index.html",
-                "entries":[{
-                    "name":"mvc.Model",
+                "subcats":[{
+                    "name":"Model",
                     "desc":"模型类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/Model.html"
                 },{
-                    "name":"mvc.Collection",
+                    "name":"Collection",
                     "desc":"集合类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/Collection.html"
                 },{
-                    "name":"mvc.View",
+                    "name":"View",
                     "desc":"视图类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/View.html"
                 },{
-                    "name":"mvc.Router",
+                    "name":"Router",
                     "desc":"路由类.",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/mvc/Router.html"
                 }]
@@ -200,7 +200,7 @@ KISSY.add('demo/api/components',function(S){
             {
                 "name":"overlay",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/overlay/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Overlay",
                     "desc":"悬浮的对话框",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/overlay/overlay.html"
@@ -217,7 +217,7 @@ KISSY.add('demo/api/components',function(S){
             {
                 "name":"promise",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/promise/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Promise",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/promise/promise.html"
                 },{
@@ -244,7 +244,7 @@ KISSY.add('demo/api/components',function(S){
                 "name":"Tabs",
                 "desc":"标签页",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/tabs/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Tabs",
                     "desc":"标签页",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/tabs/tabs.html"
@@ -261,7 +261,7 @@ KISSY.add('demo/api/components',function(S){
             {
                 "name":"tree",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/tree/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Node",
                     "desc":"树节点",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/tree/Node.html"
@@ -282,7 +282,7 @@ KISSY.add('demo/api/components',function(S){
             {
                 "name":"uri",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/uri/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Uri",
                     "desc":"uri 解析模块",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/uri/uri.html"
@@ -296,7 +296,7 @@ KISSY.add('demo/api/components',function(S){
                 "name":"waterfall",
                 "desc":"瀑布布局",
                 "slug":"http://docs.kissyui.com/docs/html/api/component/waterfall/index.html",
-                "entries":[{
+                "subcats":[{
                     "name":"Waterfall",
                     "slug":"http://docs.kissyui.com/docs/html/api/component/waterfall/intervein.html"
                 },{
