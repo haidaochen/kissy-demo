@@ -64,10 +64,8 @@
         <!--S sidebar -->
         <nav id="J_Sidebar" class="sidebar">
           <div id="J_SidebarHd" class="sidebar-hd">
-            <ul>
-              <li><a href="javascript:;" title="核心模块集" data-api-mod="demo/api/core">core</a></li>
-              <li><a href="javascript:;" title="扩展模块集" data-api-mod="demo/api/components">components</a></li>
-            </ul>
+              <a href="javascript:;" title="核心模块集" data-api-mod="demo/api/core">core</a>
+              <a href="javascript:;" title="扩展模块集" data-api-mod="demo/api/components">components</a>
           </div>
           <div id="J_SidebarBd" class="sidebar-bd"></div>
         </nav>

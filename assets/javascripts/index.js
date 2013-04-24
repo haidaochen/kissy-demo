@@ -48,8 +48,8 @@ KISSY.add('demo/index', function(S, Base, Sidebar) {
     var self = this,
         winH = $(window).height();
 
-    self.sideEl.css('height', winH - 20);
-    self.codeBdEl.css('height', winH - 81);
+    self.sideEl.css('height', winH - 40);
+    self.codeBdEl.css('height', winH - 101);
   };
 
   /**

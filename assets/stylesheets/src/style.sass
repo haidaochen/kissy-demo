@@ -54,7 +54,7 @@ body
   background: #B94A48
 
 .wrap
-  padding: 10px
+  padding: 20px 10px
   overflow: hidden
 
 .head
@@ -208,12 +208,9 @@ body
 
     .sidebar-hd
       padding: 5px 0
-      margin-bottom: 15px
+      margin-bottom: 14px
       height: 30px
       +border-shadow("bottom")
-
-      li
-        +float-left
 
       a
         +float-left
@@ -225,34 +222,51 @@ body
         +box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset)
   
     .sidebar-bd
+      overflow: hidden
 
       li
         cursor: pointer
         font-size: 14px
         line-height: 18px
 
-      .module-name
-        padding: 5px 5px 4px
-        background: rgba(0, 0, 0 , .3)
-        +border-shadow("bottom")
+      .modules
+        margin-bottom: -1px
 
-        i
-          +float-left
-          line-height: 16px
+        .module-name
+          padding: 5px 5px 4px
+          background: rgba(0, 0, 0 , .3)
+          +border-shadow("bottom")
+
+          i
+            +float-left
+            line-height: 16px
+
+      .subcats, .entries
+        display: none
 
       .subcat-name
-        display: none
         padding: 5px 5px 4px 22px
-        background: rgba(0, 0, 0 , .2)
+        background: rgba(0, 0, 0 , .1)
+        +border-shadow("bottom")
 
       .entrie
-        display: none
-        padding: 5px 5px 0 22px
-        background: rgba(0, 0, 0 , .1)
+        padding: 5px 5px 4px 22px
+        font-size: 12px
+        color: #333
+        border-bottom: 1px solid #EEE
+        background: #FFF
 
         .entrie-desc
-          font-size: 12px
           color: #999
+
+      .current
+        color: #FFF
+        border-color: #3385F7
+        background: #3385F7
+        +text-shadow(rgba(0, 0, 0, .2) 1px 1px 0)
+
+        .entrie-desc
+          color: #EEE
 
   .config
     display: none
