@@ -1,4 +1,4 @@
-KISSY.add('demo/api/components',function(S){
+KISSY.add(function(S){
 
     return     {
         "name":"components",

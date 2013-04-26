@@ -1,7 +1,7 @@
-KISSY.add('demo/api/core',function(S){
+KISSY.add(function(S){
 
 	return     {
-        "anme":"core",
+        "name":"core",
         "desc":"核心模块集",
         "subcls":[
             {
