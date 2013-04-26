@@ -161,7 +161,7 @@ KISSY.add('demo/base', function(S, Node, IO) {
    */
   Base.prototype._makeQueryId = function() {
     var self  = this,
-        types = ['module', 'subcat', 'entrie'],
+        types = ['module', 'entrie'],
         temp  = [];
 
     S.each(types, function(type) {
